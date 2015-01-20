@@ -63,7 +63,7 @@ Implement this method if your JSON objects have properties that map to different
 
 **\+ (NSArray *)jl_excludedFromSerialization;**
 
-Implement this method in your model object if your objects have properties that you don't want to be included in your JSON representation when serialized. For each property you don't want serialized, add it's name to an array. An example would be if you have a property named **password** and you didn't want it to be serialized, you return **@["password"]** from this method.
+Implement this method in your model object if your objects have properties that you don't want to be included in your JSON representation when serialized. For each property you don't want serialized, add its name to an array. An example would be if you have a property named **password** and you didn't want it to be serialized, you return **@["password"]** from this method.
 
 **\+ (NSDateFormatter *)jl_dateFormatterForPropertyNamed:(NSString *)propertyName;**
 

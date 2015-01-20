@@ -1,0 +1,559 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B321989D1749A10700066DA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B321989C1749A10700066DA7 /* Foundation.framework */; };
+		B32198AF1749A10800066DA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B321989C1749A10700066DA7 /* Foundation.framework */; };
+		B340CC381A6DEC4F00329CF6 /* XCTestCase+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC1D1A6DEC4F00329CF6 /* XCTestCase+Util.m */; };
+		B340CC3B1A6DEC4F00329CF6 /* JLObjectDeserializerSimpleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC221A6DEC4F00329CF6 /* JLObjectDeserializerSimpleTests.m */; };
+		B340CC3C1A6DEC4F00329CF6 /* JLObjectSerializerAdvancedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC231A6DEC4F00329CF6 /* JLObjectSerializerAdvancedTests.m */; };
+		B340CC3D1A6DEC4F00329CF6 /* JLObjectSerializerSimpleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC241A6DEC4F00329CF6 /* JLObjectSerializerSimpleTests.m */; };
+		B340CC3E1A6DEC4F00329CF6 /* AnotherSimpleTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC271A6DEC4F00329CF6 /* AnotherSimpleTestObject.m */; };
+		B340CC3F1A6DEC4F00329CF6 /* ArrayHoldingTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC291A6DEC4F00329CF6 /* ArrayHoldingTestObject.m */; };
+		B340CC401A6DEC4F00329CF6 /* ComplicatedTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC2B1A6DEC4F00329CF6 /* ComplicatedTestObject.m */; };
+		B340CC411A6DEC4F00329CF6 /* HTMLContainingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC2D1A6DEC4F00329CF6 /* HTMLContainingObject.m */; };
+		B340CC421A6DEC4F00329CF6 /* ObjectAmbiguousType.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC2F1A6DEC4F00329CF6 /* ObjectAmbiguousType.m */; };
+		B340CC431A6DEC4F00329CF6 /* SimpleExcludedPropertyTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC311A6DEC4F00329CF6 /* SimpleExcludedPropertyTestObject.m */; };
+		B340CC441A6DEC4F00329CF6 /* SimpleTestMappingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC331A6DEC4F00329CF6 /* SimpleTestMappingObject.m */; };
+		B340CC451A6DEC4F00329CF6 /* SimpleTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC351A6DEC4F00329CF6 /* SimpleTestObject.m */; };
+		B340CC461A6DEC4F00329CF6 /* SubclassTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC371A6DEC4F00329CF6 /* SubclassTestObject.m */; };
+		B340CC5C1A6DEC6700329CF6 /* NSError+JLJSONMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC491A6DEC6700329CF6 /* NSError+JLJSONMapping.m */; };
+		B340CC5D1A6DEC6700329CF6 /* NSError+JLJSONMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC491A6DEC6700329CF6 /* NSError+JLJSONMapping.m */; };
+		B340CC5E1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC4B1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.m */; };
+		B340CC5F1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC4B1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.m */; };
+		B340CC601A6DEC6700329CF6 /* NSObject+JLJSONMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC4D1A6DEC6700329CF6 /* NSObject+JLJSONMapping.m */; };
+		B340CC611A6DEC6700329CF6 /* NSObject+JLJSONMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC4D1A6DEC6700329CF6 /* NSObject+JLJSONMapping.m */; };
+		B340CC621A6DEC6700329CF6 /* JLObjectDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC501A6DEC6700329CF6 /* JLObjectDeserializer.m */; };
+		B340CC631A6DEC6700329CF6 /* JLObjectDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC501A6DEC6700329CF6 /* JLObjectDeserializer.m */; };
+		B340CC641A6DEC6700329CF6 /* JLObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC521A6DEC6700329CF6 /* JLObjectMapper.m */; };
+		B340CC651A6DEC6700329CF6 /* JLObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC521A6DEC6700329CF6 /* JLObjectMapper.m */; };
+		B340CC661A6DEC6700329CF6 /* JLObjectSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC541A6DEC6700329CF6 /* JLObjectSerializer.m */; };
+		B340CC671A6DEC6700329CF6 /* JLObjectSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC541A6DEC6700329CF6 /* JLObjectSerializer.m */; };
+		B340CC681A6DEC6700329CF6 /* JLTranscodingBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC561A6DEC6700329CF6 /* JLTranscodingBase.m */; };
+		B340CC691A6DEC6700329CF6 /* JLTranscodingBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC561A6DEC6700329CF6 /* JLTranscodingBase.m */; };
+		B340CC6A1A6DEC6700329CF6 /* JLObjectMappingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC591A6DEC6700329CF6 /* JLObjectMappingUtils.m */; };
+		B340CC6B1A6DEC6700329CF6 /* JLObjectMappingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC591A6DEC6700329CF6 /* JLObjectMappingUtils.m */; };
+		B340CC6C1A6DEC6700329CF6 /* JLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC5B1A6DEC6700329CF6 /* JLTimer.m */; };
+		B340CC6D1A6DEC6700329CF6 /* JLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC5B1A6DEC6700329CF6 /* JLTimer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B32198B01749A10800066DA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B32198911749A10700066DA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B32198981749A10700066DA7;
+			remoteInfo = JLJSONMapping;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B32198971749A10700066DA7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B32198991749A10700066DA7 /* libJLJSONMapping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJLJSONMapping.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B321989C1749A10700066DA7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B32198AA1749A10800066DA7 /* JLJSONMappingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLJSONMappingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B340CC1C1A6DEC4F00329CF6 /* XCTestCase+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestCase+Util.h"; sourceTree = "<group>"; };
+		B340CC1D1A6DEC4F00329CF6 /* XCTestCase+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCTestCase+Util.m"; sourceTree = "<group>"; };
+		B340CC221A6DEC4F00329CF6 /* JLObjectDeserializerSimpleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLObjectDeserializerSimpleTests.m; sourceTree = "<group>"; };
+		B340CC231A6DEC4F00329CF6 /* JLObjectSerializerAdvancedTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLObjectSerializerAdvancedTests.m; sourceTree = "<group>"; };
+		B340CC241A6DEC4F00329CF6 /* JLObjectSerializerSimpleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLObjectSerializerSimpleTests.m; sourceTree = "<group>"; };
+		B340CC261A6DEC4F00329CF6 /* AnotherSimpleTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnotherSimpleTestObject.h; sourceTree = "<group>"; };
+		B340CC271A6DEC4F00329CF6 /* AnotherSimpleTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnotherSimpleTestObject.m; sourceTree = "<group>"; };
+		B340CC281A6DEC4F00329CF6 /* ArrayHoldingTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayHoldingTestObject.h; sourceTree = "<group>"; };
+		B340CC291A6DEC4F00329CF6 /* ArrayHoldingTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayHoldingTestObject.m; sourceTree = "<group>"; };
+		B340CC2A1A6DEC4F00329CF6 /* ComplicatedTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplicatedTestObject.h; sourceTree = "<group>"; };
+		B340CC2B1A6DEC4F00329CF6 /* ComplicatedTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplicatedTestObject.m; sourceTree = "<group>"; };
+		B340CC2C1A6DEC4F00329CF6 /* HTMLContainingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLContainingObject.h; sourceTree = "<group>"; };
+		B340CC2D1A6DEC4F00329CF6 /* HTMLContainingObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLContainingObject.m; sourceTree = "<group>"; };
+		B340CC2E1A6DEC4F00329CF6 /* ObjectAmbiguousType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectAmbiguousType.h; sourceTree = "<group>"; };
+		B340CC2F1A6DEC4F00329CF6 /* ObjectAmbiguousType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectAmbiguousType.m; sourceTree = "<group>"; };
+		B340CC301A6DEC4F00329CF6 /* SimpleExcludedPropertyTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleExcludedPropertyTestObject.h; sourceTree = "<group>"; };
+		B340CC311A6DEC4F00329CF6 /* SimpleExcludedPropertyTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleExcludedPropertyTestObject.m; sourceTree = "<group>"; };
+		B340CC321A6DEC4F00329CF6 /* SimpleTestMappingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTestMappingObject.h; sourceTree = "<group>"; };
+		B340CC331A6DEC4F00329CF6 /* SimpleTestMappingObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTestMappingObject.m; sourceTree = "<group>"; };
+		B340CC341A6DEC4F00329CF6 /* SimpleTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTestObject.h; sourceTree = "<group>"; };
+		B340CC351A6DEC4F00329CF6 /* SimpleTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTestObject.m; sourceTree = "<group>"; };
+		B340CC361A6DEC4F00329CF6 /* SubclassTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassTestObject.h; sourceTree = "<group>"; };
+		B340CC371A6DEC4F00329CF6 /* SubclassTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubclassTestObject.m; sourceTree = "<group>"; };
+		B340CC481A6DEC6700329CF6 /* NSError+JLJSONMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+JLJSONMapping.h"; sourceTree = "<group>"; };
+		B340CC491A6DEC6700329CF6 /* NSError+JLJSONMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+JLJSONMapping.m"; sourceTree = "<group>"; };
+		B340CC4A1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+JLJSONMapping.h"; sourceTree = "<group>"; };
+		B340CC4B1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+JLJSONMapping.m"; sourceTree = "<group>"; };
+		B340CC4C1A6DEC6700329CF6 /* NSObject+JLJSONMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JLJSONMapping.h"; sourceTree = "<group>"; };
+		B340CC4D1A6DEC6700329CF6 /* NSObject+JLJSONMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JLJSONMapping.m"; sourceTree = "<group>"; };
+		B340CC4F1A6DEC6700329CF6 /* JLObjectDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLObjectDeserializer.h; sourceTree = "<group>"; };
+		B340CC501A6DEC6700329CF6 /* JLObjectDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLObjectDeserializer.m; sourceTree = "<group>"; };
+		B340CC511A6DEC6700329CF6 /* JLObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLObjectMapper.h; sourceTree = "<group>"; };
+		B340CC521A6DEC6700329CF6 /* JLObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLObjectMapper.m; sourceTree = "<group>"; };
+		B340CC531A6DEC6700329CF6 /* JLObjectSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLObjectSerializer.h; sourceTree = "<group>"; };
+		B340CC541A6DEC6700329CF6 /* JLObjectSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLObjectSerializer.m; sourceTree = "<group>"; };
+		B340CC551A6DEC6700329CF6 /* JLTranscodingBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTranscodingBase.h; sourceTree = "<group>"; };
+		B340CC561A6DEC6700329CF6 /* JLTranscodingBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTranscodingBase.m; sourceTree = "<group>"; };
+		B340CC581A6DEC6700329CF6 /* JLObjectMappingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLObjectMappingUtils.h; sourceTree = "<group>"; };
+		B340CC591A6DEC6700329CF6 /* JLObjectMappingUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLObjectMappingUtils.m; sourceTree = "<group>"; };
+		B340CC5A1A6DEC6700329CF6 /* JLTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTimer.h; sourceTree = "<group>"; };
+		B340CC5B1A6DEC6700329CF6 /* JLTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTimer.m; sourceTree = "<group>"; };
+		B340CC711A6DED6C00329CF6 /* JLJSONMappingTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "JLJSONMappingTests-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B32198961749A10700066DA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B321989D1749A10700066DA7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B32198A61749A10800066DA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B32198AF1749A10800066DA7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B32198901749A10700066DA7 = {
+			isa = PBXGroup;
+			children = (
+				B321989B1749A10700066DA7 /* Frameworks */,
+				B321989E1749A10700066DA7 /* JLJSONMapping */,
+				B340CC1A1A6DEC4F00329CF6 /* JLJSONMappingTests */,
+				B321989A1749A10700066DA7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B321989A1749A10700066DA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B32198991749A10700066DA7 /* libJLJSONMapping.a */,
+				B32198AA1749A10800066DA7 /* JLJSONMappingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B321989B1749A10700066DA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B321989C1749A10700066DA7 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B321989E1749A10700066DA7 /* JLJSONMapping */ = {
+			isa = PBXGroup;
+			children = (
+				B340CC471A6DEC6700329CF6 /* Category */,
+				B340CC4E1A6DEC6700329CF6 /* Mapping */,
+				B340CC571A6DEC6700329CF6 /* Util */,
+			);
+			path = JLJSONMapping;
+			sourceTree = "<group>";
+		};
+		B340CC1A1A6DEC4F00329CF6 /* JLJSONMappingTests */ = {
+			isa = PBXGroup;
+			children = (
+				B340CC1B1A6DEC4F00329CF6 /* Category */,
+				B340CC211A6DEC4F00329CF6 /* Mapping */,
+				B340CC251A6DEC4F00329CF6 /* Model */,
+				B340CC701A6DED6C00329CF6 /* Supporting Files */,
+			);
+			path = JLJSONMappingTests;
+			sourceTree = "<group>";
+		};
+		B340CC1B1A6DEC4F00329CF6 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				B340CC1C1A6DEC4F00329CF6 /* XCTestCase+Util.h */,
+				B340CC1D1A6DEC4F00329CF6 /* XCTestCase+Util.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		B340CC211A6DEC4F00329CF6 /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				B340CC221A6DEC4F00329CF6 /* JLObjectDeserializerSimpleTests.m */,
+				B340CC231A6DEC4F00329CF6 /* JLObjectSerializerAdvancedTests.m */,
+				B340CC241A6DEC4F00329CF6 /* JLObjectSerializerSimpleTests.m */,
+			);
+			path = Mapping;
+			sourceTree = "<group>";
+		};
+		B340CC251A6DEC4F00329CF6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B340CC261A6DEC4F00329CF6 /* AnotherSimpleTestObject.h */,
+				B340CC271A6DEC4F00329CF6 /* AnotherSimpleTestObject.m */,
+				B340CC281A6DEC4F00329CF6 /* ArrayHoldingTestObject.h */,
+				B340CC291A6DEC4F00329CF6 /* ArrayHoldingTestObject.m */,
+				B340CC2A1A6DEC4F00329CF6 /* ComplicatedTestObject.h */,
+				B340CC2B1A6DEC4F00329CF6 /* ComplicatedTestObject.m */,
+				B340CC2C1A6DEC4F00329CF6 /* HTMLContainingObject.h */,
+				B340CC2D1A6DEC4F00329CF6 /* HTMLContainingObject.m */,
+				B340CC2E1A6DEC4F00329CF6 /* ObjectAmbiguousType.h */,
+				B340CC2F1A6DEC4F00329CF6 /* ObjectAmbiguousType.m */,
+				B340CC301A6DEC4F00329CF6 /* SimpleExcludedPropertyTestObject.h */,
+				B340CC311A6DEC4F00329CF6 /* SimpleExcludedPropertyTestObject.m */,
+				B340CC321A6DEC4F00329CF6 /* SimpleTestMappingObject.h */,
+				B340CC331A6DEC4F00329CF6 /* SimpleTestMappingObject.m */,
+				B340CC341A6DEC4F00329CF6 /* SimpleTestObject.h */,
+				B340CC351A6DEC4F00329CF6 /* SimpleTestObject.m */,
+				B340CC361A6DEC4F00329CF6 /* SubclassTestObject.h */,
+				B340CC371A6DEC4F00329CF6 /* SubclassTestObject.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B340CC471A6DEC6700329CF6 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				B340CC481A6DEC6700329CF6 /* NSError+JLJSONMapping.h */,
+				B340CC491A6DEC6700329CF6 /* NSError+JLJSONMapping.m */,
+				B340CC4A1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.h */,
+				B340CC4B1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.m */,
+				B340CC4C1A6DEC6700329CF6 /* NSObject+JLJSONMapping.h */,
+				B340CC4D1A6DEC6700329CF6 /* NSObject+JLJSONMapping.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		B340CC4E1A6DEC6700329CF6 /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				B340CC4F1A6DEC6700329CF6 /* JLObjectDeserializer.h */,
+				B340CC501A6DEC6700329CF6 /* JLObjectDeserializer.m */,
+				B340CC511A6DEC6700329CF6 /* JLObjectMapper.h */,
+				B340CC521A6DEC6700329CF6 /* JLObjectMapper.m */,
+				B340CC531A6DEC6700329CF6 /* JLObjectSerializer.h */,
+				B340CC541A6DEC6700329CF6 /* JLObjectSerializer.m */,
+				B340CC551A6DEC6700329CF6 /* JLTranscodingBase.h */,
+				B340CC561A6DEC6700329CF6 /* JLTranscodingBase.m */,
+			);
+			path = Mapping;
+			sourceTree = "<group>";
+		};
+		B340CC571A6DEC6700329CF6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B340CC581A6DEC6700329CF6 /* JLObjectMappingUtils.h */,
+				B340CC591A6DEC6700329CF6 /* JLObjectMappingUtils.m */,
+				B340CC5A1A6DEC6700329CF6 /* JLTimer.h */,
+				B340CC5B1A6DEC6700329CF6 /* JLTimer.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		B340CC701A6DED6C00329CF6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B340CC711A6DED6C00329CF6 /* JLJSONMappingTests-Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B32198981749A10700066DA7 /* JLJSONMapping */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B32198BE1749A10800066DA7 /* Build configuration list for PBXNativeTarget "JLJSONMapping" */;
+			buildPhases = (
+				B32198951749A10700066DA7 /* Sources */,
+				B32198961749A10700066DA7 /* Frameworks */,
+				B32198971749A10700066DA7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JLJSONMapping;
+			productName = JLJSONMapping;
+			productReference = B32198991749A10700066DA7 /* libJLJSONMapping.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B32198A91749A10800066DA7 /* JLJSONMappingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B32198C11749A10800066DA7 /* Build configuration list for PBXNativeTarget "JLJSONMappingTests" */;
+			buildPhases = (
+				B32198A51749A10800066DA7 /* Sources */,
+				B32198A61749A10800066DA7 /* Frameworks */,
+				B32198A71749A10800066DA7 /* Resources */,
+				B32198A81749A10800066DA7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B32198B11749A10800066DA7 /* PBXTargetDependency */,
+			);
+			name = JLJSONMappingTests;
+			productName = JLJSONMappingTests;
+			productReference = B32198AA1749A10800066DA7 /* JLJSONMappingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B32198911749A10700066DA7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Joshua Liebowitz";
+			};
+			buildConfigurationList = B32198941749A10700066DA7 /* Build configuration list for PBXProject "JLJSONMapping" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B32198901749A10700066DA7;
+			productRefGroup = B321989A1749A10700066DA7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B32198981749A10700066DA7 /* JLJSONMapping */,
+				B32198A91749A10800066DA7 /* JLJSONMappingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B32198A71749A10800066DA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B32198A81749A10800066DA7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B32198951749A10700066DA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B340CC5E1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.m in Sources */,
+				B340CC681A6DEC6700329CF6 /* JLTranscodingBase.m in Sources */,
+				B340CC6C1A6DEC6700329CF6 /* JLTimer.m in Sources */,
+				B340CC621A6DEC6700329CF6 /* JLObjectDeserializer.m in Sources */,
+				B340CC6A1A6DEC6700329CF6 /* JLObjectMappingUtils.m in Sources */,
+				B340CC661A6DEC6700329CF6 /* JLObjectSerializer.m in Sources */,
+				B340CC641A6DEC6700329CF6 /* JLObjectMapper.m in Sources */,
+				B340CC601A6DEC6700329CF6 /* NSObject+JLJSONMapping.m in Sources */,
+				B340CC5C1A6DEC6700329CF6 /* NSError+JLJSONMapping.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B32198A51749A10800066DA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B340CC6B1A6DEC6700329CF6 /* JLObjectMappingUtils.m in Sources */,
+				B340CC671A6DEC6700329CF6 /* JLObjectSerializer.m in Sources */,
+				B340CC631A6DEC6700329CF6 /* JLObjectDeserializer.m in Sources */,
+				B340CC461A6DEC4F00329CF6 /* SubclassTestObject.m in Sources */,
+				B340CC691A6DEC6700329CF6 /* JLTranscodingBase.m in Sources */,
+				B340CC381A6DEC4F00329CF6 /* XCTestCase+Util.m in Sources */,
+				B340CC611A6DEC6700329CF6 /* NSObject+JLJSONMapping.m in Sources */,
+				B340CC5D1A6DEC6700329CF6 /* NSError+JLJSONMapping.m in Sources */,
+				B340CC651A6DEC6700329CF6 /* JLObjectMapper.m in Sources */,
+				B340CC431A6DEC4F00329CF6 /* SimpleExcludedPropertyTestObject.m in Sources */,
+				B340CC451A6DEC4F00329CF6 /* SimpleTestObject.m in Sources */,
+				B340CC6D1A6DEC6700329CF6 /* JLTimer.m in Sources */,
+				B340CC441A6DEC4F00329CF6 /* SimpleTestMappingObject.m in Sources */,
+				B340CC3C1A6DEC4F00329CF6 /* JLObjectSerializerAdvancedTests.m in Sources */,
+				B340CC3D1A6DEC4F00329CF6 /* JLObjectSerializerSimpleTests.m in Sources */,
+				B340CC3B1A6DEC4F00329CF6 /* JLObjectDeserializerSimpleTests.m in Sources */,
+				B340CC421A6DEC4F00329CF6 /* ObjectAmbiguousType.m in Sources */,
+				B340CC3F1A6DEC4F00329CF6 /* ArrayHoldingTestObject.m in Sources */,
+				B340CC401A6DEC4F00329CF6 /* ComplicatedTestObject.m in Sources */,
+				B340CC3E1A6DEC4F00329CF6 /* AnotherSimpleTestObject.m in Sources */,
+				B340CC5F1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.m in Sources */,
+				B340CC411A6DEC4F00329CF6 /* HTMLContainingObject.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B32198B11749A10800066DA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B32198981749A10700066DA7 /* JLJSONMapping */;
+			targetProxy = B32198B01749A10800066DA7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B32198BC1749A10800066DA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B32198BD1749A10800066DA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B32198BF1749A10800066DA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/JLJSONMapping.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B32198C01749A10800066DA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/JLJSONMapping.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B32198C21749A10800066DA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				INFOPLIST_FILE = "JLJSONMappingTests/Supporting Files/JLJSONMappingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B32198C31749A10800066DA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				INFOPLIST_FILE = "JLJSONMappingTests/Supporting Files/JLJSONMappingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B32198941749A10700066DA7 /* Build configuration list for PBXProject "JLJSONMapping" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B32198BC1749A10800066DA7 /* Debug */,
+				B32198BD1749A10800066DA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B32198BE1749A10800066DA7 /* Build configuration list for PBXNativeTarget "JLJSONMapping" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B32198BF1749A10800066DA7 /* Debug */,
+				B32198C01749A10800066DA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B32198C11749A10800066DA7 /* Build configuration list for PBXNativeTarget "JLJSONMappingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B32198C21749A10800066DA7 /* Debug */,
+				B32198C31749A10800066DA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B32198911749A10700066DA7 /* Project object */;
+}

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Joshua Liebowitz. All rights reserved.
 //
 
-#import "SimpleTestMappingObject.h"
+#import "MappedCollectionTypeTestObject.h"
 
-@implementation SimpleTestMappingObject
+@implementation MappedCollectionTypeTestObject
 
 + (NSDictionary *)jl_propertyNameMap
 {
@@ -22,8 +22,8 @@
 
 + (NSDictionary *)jl_propertyTypeMap
 {
-    return @{@"dictionaryOfSimpleObjects" : [SimpleTestMappingObject class],
-             @"arrayOfTestObjects" : [SimpleTestMappingObject class]
+    return @{@"dictionaryOfSimpleObjects" : [MappedCollectionTypeTestObject class],
+             @"arrayOfTestObjects" : [MappedCollectionTypeTestObject class]
              };
 }
 

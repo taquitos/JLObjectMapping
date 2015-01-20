@@ -7,10 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "EnumerationContainingTestObject.h"
 #import "JLObjectDeserializer.h"
 #import "JLObjectSerializer.h"
+#import "MappedCollectionTypeTestObject.h"
 #import "SimpleExcludedPropertyTestObject.h"
-#import "SimpleTestMappingObject.h"
 #import "SimpleTestObject.h"
 #import "XCTestCase+Util.h"
 
@@ -37,23 +38,23 @@ static NSString * const simpleTestObjectString32Bit = @"{\"pBoolean\":1,\"boolea
 
 - (void)testPropertyNameMapping
 {
-    SimpleTestMappingObject *simpleObject = [[SimpleTestMappingObject alloc] init];
+    MappedCollectionTypeTestObject *simpleObject = [[MappedCollectionTypeTestObject alloc] init];
     simpleObject.integer = 12345;//
     simpleObject.dictionary = @{@"turtles":@"nope"};//
-    SimpleTestMappingObject *simpleDictionaryObject = [[SimpleTestMappingObject alloc] init];
+    MappedCollectionTypeTestObject *simpleDictionaryObject = [[MappedCollectionTypeTestObject alloc] init];
     simpleDictionaryObject.integer = 101;//
     simpleDictionaryObject.dictionary = @{@"turtles":@"yup"};//
     
     NSDictionary *testDictionary = @{@"oneObject":simpleDictionaryObject};
     simpleObject.dictionaryOfSimpleObjects = testDictionary;
     
-    SimpleTestMappingObject *arrayObject = [[SimpleTestMappingObject alloc] init];
+    MappedCollectionTypeTestObject *arrayObject = [[MappedCollectionTypeTestObject alloc] init];
     arrayObject.integer = 202;
     arrayObject.dictionary = @{@"turtles":@"huh?"};
     simpleObject.arrayOfTestObjects = @[arrayObject];
     
     NSString *json =@"{\"myDictionary\":{\"turtles\":\"nope\"},\"someOtherNameOfInteger\":12345,\"dictionaryOfSimpleTestMappingObjects\":{\"oneObject\":{\"someOtherNameOfInteger\":101,\"myDictionary\":{\"turtles\":\"yup\"}}},\"array\":[{\"someOtherNameOfInteger\":202,\"myDictionary\":{\"turtles\":\"huh?\"}}]}";;
-    SimpleTestMappingObject *transcodedObject = [deserializer objectWithString:json targetClass:[SimpleTestMappingObject class] error:NULL];
+    MappedCollectionTypeTestObject *transcodedObject = [deserializer objectWithString:json targetClass:[MappedCollectionTypeTestObject class] error:NULL];
     
     //test that simple properties can be transcoded
     XCTAssertEqual(simpleObject.integer, transcodedObject.integer, @"simple properties couldn't be transcoded");
@@ -150,6 +151,24 @@ static NSString * const simpleTestObjectString32Bit = @"{\"pBoolean\":1,\"boolea
     NSString *objectString = [serializer JSONStringWithObject:newObject1];
     XCTAssertEqualObjects(newObject1, newObject2, @"Both simple objects should be equal, nothing was done other than creating a new one");
     XCTAssertEqualObjects(objectString, simpleTestObjectString64Bit, @"String representation should match original object2");
+}
+
+- (void)testEnumerationSerialization
+{
+    EnumerationContainingTestObject *object = [[EnumerationContainingTestObject alloc] init];
+    object.enumValue = MyEnumSecondValue;
+    NSString *serializedJSON = [serializer JSONStringWithObject:object];
+    NSString *expectedJson = @"{\"optionValue\":0,\"enumValue\":2}";
+    XCTAssertEqualObjects(expectedJson, serializedJSON, @"Object with an enum property should have been serialized correctly");
+}
+
+- (void)testOptionSerialization
+{
+    EnumerationContainingTestObject *object = [[EnumerationContainingTestObject alloc] init];
+    object.optionValue = MyOptionAValue | MyOptionSecondValue;
+    NSString *serializedJSON = [serializer JSONStringWithObject:object];
+    NSString *expectedJson = @"{\"optionValue\":3,\"enumValue\":0}";
+    XCTAssertEqualObjects(expectedJson, serializedJSON, @"Object with an option property should have been serialized correctly");
 }
 
 #pragma mark - Property Exclusion

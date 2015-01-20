@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HTMLContainingObject : NSObject
+@interface HTMLContainingTestObject : NSObject
 
 @property (nonatomic, copy) NSString *html;
 

@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Joshua Liebowitz. All rights reserved.
 //
 
-#import "HTMLContainingObject.h"
+#import "HTMLContainingTestObject.h"
 
-@implementation HTMLContainingObject
+@implementation HTMLContainingTestObject
 
 @end

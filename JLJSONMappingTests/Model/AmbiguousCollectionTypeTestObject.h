@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ObjectAmbiguousType : NSObject
+@interface AmbiguousCollectionTypeTestObject : NSObject
 
 @property (nonatomic) NSDictionary *someDictionary;
 @property (nonatomic) NSArray *someArray;

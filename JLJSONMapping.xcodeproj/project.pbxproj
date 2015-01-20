@@ -16,10 +16,10 @@
 		B340CC3E1A6DEC4F00329CF6 /* AnotherSimpleTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC271A6DEC4F00329CF6 /* AnotherSimpleTestObject.m */; };
 		B340CC3F1A6DEC4F00329CF6 /* ArrayHoldingTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC291A6DEC4F00329CF6 /* ArrayHoldingTestObject.m */; };
 		B340CC401A6DEC4F00329CF6 /* ComplicatedTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC2B1A6DEC4F00329CF6 /* ComplicatedTestObject.m */; };
-		B340CC411A6DEC4F00329CF6 /* HTMLContainingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC2D1A6DEC4F00329CF6 /* HTMLContainingObject.m */; };
-		B340CC421A6DEC4F00329CF6 /* ObjectAmbiguousType.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC2F1A6DEC4F00329CF6 /* ObjectAmbiguousType.m */; };
+		B340CC411A6DEC4F00329CF6 /* HTMLContainingTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC2D1A6DEC4F00329CF6 /* HTMLContainingTestObject.m */; };
+		B340CC421A6DEC4F00329CF6 /* AmbiguousCollectionTypeTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC2F1A6DEC4F00329CF6 /* AmbiguousCollectionTypeTestObject.m */; };
 		B340CC431A6DEC4F00329CF6 /* SimpleExcludedPropertyTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC311A6DEC4F00329CF6 /* SimpleExcludedPropertyTestObject.m */; };
-		B340CC441A6DEC4F00329CF6 /* SimpleTestMappingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC331A6DEC4F00329CF6 /* SimpleTestMappingObject.m */; };
+		B340CC441A6DEC4F00329CF6 /* MappedCollectionTypeTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC331A6DEC4F00329CF6 /* MappedCollectionTypeTestObject.m */; };
 		B340CC451A6DEC4F00329CF6 /* SimpleTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC351A6DEC4F00329CF6 /* SimpleTestObject.m */; };
 		B340CC461A6DEC4F00329CF6 /* SubclassTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC371A6DEC4F00329CF6 /* SubclassTestObject.m */; };
 		B340CC5C1A6DEC6700329CF6 /* NSError+JLJSONMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC491A6DEC6700329CF6 /* NSError+JLJSONMapping.m */; };
@@ -40,6 +40,7 @@
 		B340CC6B1A6DEC6700329CF6 /* JLObjectMappingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC591A6DEC6700329CF6 /* JLObjectMappingUtils.m */; };
 		B340CC6C1A6DEC6700329CF6 /* JLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC5B1A6DEC6700329CF6 /* JLTimer.m */; };
 		B340CC6D1A6DEC6700329CF6 /* JLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC5B1A6DEC6700329CF6 /* JLTimer.m */; };
+		B340CC751A6DF23700329CF6 /* EnumerationContainingTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC741A6DF23700329CF6 /* EnumerationContainingTestObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,14 +80,14 @@
 		B340CC291A6DEC4F00329CF6 /* ArrayHoldingTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayHoldingTestObject.m; sourceTree = "<group>"; };
 		B340CC2A1A6DEC4F00329CF6 /* ComplicatedTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplicatedTestObject.h; sourceTree = "<group>"; };
 		B340CC2B1A6DEC4F00329CF6 /* ComplicatedTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplicatedTestObject.m; sourceTree = "<group>"; };
-		B340CC2C1A6DEC4F00329CF6 /* HTMLContainingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLContainingObject.h; sourceTree = "<group>"; };
-		B340CC2D1A6DEC4F00329CF6 /* HTMLContainingObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLContainingObject.m; sourceTree = "<group>"; };
-		B340CC2E1A6DEC4F00329CF6 /* ObjectAmbiguousType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectAmbiguousType.h; sourceTree = "<group>"; };
-		B340CC2F1A6DEC4F00329CF6 /* ObjectAmbiguousType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectAmbiguousType.m; sourceTree = "<group>"; };
+		B340CC2C1A6DEC4F00329CF6 /* HTMLContainingTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLContainingTestObject.h; sourceTree = "<group>"; };
+		B340CC2D1A6DEC4F00329CF6 /* HTMLContainingTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLContainingTestObject.m; sourceTree = "<group>"; };
+		B340CC2E1A6DEC4F00329CF6 /* AmbiguousCollectionTypeTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmbiguousCollectionTypeTestObject.h; sourceTree = "<group>"; };
+		B340CC2F1A6DEC4F00329CF6 /* AmbiguousCollectionTypeTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmbiguousCollectionTypeTestObject.m; sourceTree = "<group>"; };
 		B340CC301A6DEC4F00329CF6 /* SimpleExcludedPropertyTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleExcludedPropertyTestObject.h; sourceTree = "<group>"; };
 		B340CC311A6DEC4F00329CF6 /* SimpleExcludedPropertyTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleExcludedPropertyTestObject.m; sourceTree = "<group>"; };
-		B340CC321A6DEC4F00329CF6 /* SimpleTestMappingObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTestMappingObject.h; sourceTree = "<group>"; };
-		B340CC331A6DEC4F00329CF6 /* SimpleTestMappingObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTestMappingObject.m; sourceTree = "<group>"; };
+		B340CC321A6DEC4F00329CF6 /* MappedCollectionTypeTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappedCollectionTypeTestObject.h; sourceTree = "<group>"; };
+		B340CC331A6DEC4F00329CF6 /* MappedCollectionTypeTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MappedCollectionTypeTestObject.m; sourceTree = "<group>"; };
 		B340CC341A6DEC4F00329CF6 /* SimpleTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTestObject.h; sourceTree = "<group>"; };
 		B340CC351A6DEC4F00329CF6 /* SimpleTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTestObject.m; sourceTree = "<group>"; };
 		B340CC361A6DEC4F00329CF6 /* SubclassTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassTestObject.h; sourceTree = "<group>"; };
@@ -110,6 +111,8 @@
 		B340CC5A1A6DEC6700329CF6 /* JLTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTimer.h; sourceTree = "<group>"; };
 		B340CC5B1A6DEC6700329CF6 /* JLTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTimer.m; sourceTree = "<group>"; };
 		B340CC711A6DED6C00329CF6 /* JLJSONMappingTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "JLJSONMappingTests-Info.plist"; sourceTree = "<group>"; };
+		B340CC731A6DF23700329CF6 /* EnumerationContainingTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnumerationContainingTestObject.h; sourceTree = "<group>"; };
+		B340CC741A6DF23700329CF6 /* EnumerationContainingTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnumerationContainingTestObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,20 +205,22 @@
 		B340CC251A6DEC4F00329CF6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B340CC2E1A6DEC4F00329CF6 /* AmbiguousCollectionTypeTestObject.h */,
+				B340CC2F1A6DEC4F00329CF6 /* AmbiguousCollectionTypeTestObject.m */,
 				B340CC261A6DEC4F00329CF6 /* AnotherSimpleTestObject.h */,
 				B340CC271A6DEC4F00329CF6 /* AnotherSimpleTestObject.m */,
 				B340CC281A6DEC4F00329CF6 /* ArrayHoldingTestObject.h */,
 				B340CC291A6DEC4F00329CF6 /* ArrayHoldingTestObject.m */,
 				B340CC2A1A6DEC4F00329CF6 /* ComplicatedTestObject.h */,
 				B340CC2B1A6DEC4F00329CF6 /* ComplicatedTestObject.m */,
-				B340CC2C1A6DEC4F00329CF6 /* HTMLContainingObject.h */,
-				B340CC2D1A6DEC4F00329CF6 /* HTMLContainingObject.m */,
-				B340CC2E1A6DEC4F00329CF6 /* ObjectAmbiguousType.h */,
-				B340CC2F1A6DEC4F00329CF6 /* ObjectAmbiguousType.m */,
+				B340CC731A6DF23700329CF6 /* EnumerationContainingTestObject.h */,
+				B340CC741A6DF23700329CF6 /* EnumerationContainingTestObject.m */,
+				B340CC2C1A6DEC4F00329CF6 /* HTMLContainingTestObject.h */,
+				B340CC2D1A6DEC4F00329CF6 /* HTMLContainingTestObject.m */,
+				B340CC321A6DEC4F00329CF6 /* MappedCollectionTypeTestObject.h */,
+				B340CC331A6DEC4F00329CF6 /* MappedCollectionTypeTestObject.m */,
 				B340CC301A6DEC4F00329CF6 /* SimpleExcludedPropertyTestObject.h */,
 				B340CC311A6DEC4F00329CF6 /* SimpleExcludedPropertyTestObject.m */,
-				B340CC321A6DEC4F00329CF6 /* SimpleTestMappingObject.h */,
-				B340CC331A6DEC4F00329CF6 /* SimpleTestMappingObject.m */,
 				B340CC341A6DEC4F00329CF6 /* SimpleTestObject.h */,
 				B340CC351A6DEC4F00329CF6 /* SimpleTestObject.m */,
 				B340CC361A6DEC4F00329CF6 /* SubclassTestObject.h */,
@@ -396,16 +401,17 @@
 				B340CC431A6DEC4F00329CF6 /* SimpleExcludedPropertyTestObject.m in Sources */,
 				B340CC451A6DEC4F00329CF6 /* SimpleTestObject.m in Sources */,
 				B340CC6D1A6DEC6700329CF6 /* JLTimer.m in Sources */,
-				B340CC441A6DEC4F00329CF6 /* SimpleTestMappingObject.m in Sources */,
+				B340CC751A6DF23700329CF6 /* EnumerationContainingTestObject.m in Sources */,
+				B340CC441A6DEC4F00329CF6 /* MappedCollectionTypeTestObject.m in Sources */,
 				B340CC3C1A6DEC4F00329CF6 /* JLObjectSerializerAdvancedTests.m in Sources */,
 				B340CC3D1A6DEC4F00329CF6 /* JLObjectSerializerSimpleTests.m in Sources */,
 				B340CC3B1A6DEC4F00329CF6 /* JLObjectDeserializerSimpleTests.m in Sources */,
-				B340CC421A6DEC4F00329CF6 /* ObjectAmbiguousType.m in Sources */,
+				B340CC421A6DEC4F00329CF6 /* AmbiguousCollectionTypeTestObject.m in Sources */,
 				B340CC3F1A6DEC4F00329CF6 /* ArrayHoldingTestObject.m in Sources */,
 				B340CC401A6DEC4F00329CF6 /* ComplicatedTestObject.m in Sources */,
 				B340CC3E1A6DEC4F00329CF6 /* AnotherSimpleTestObject.m in Sources */,
 				B340CC5F1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.m in Sources */,
-				B340CC411A6DEC4F00329CF6 /* HTMLContainingObject.m in Sources */,
+				B340CC411A6DEC4F00329CF6 /* HTMLContainingTestObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

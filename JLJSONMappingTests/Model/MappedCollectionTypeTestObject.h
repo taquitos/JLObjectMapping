@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SimpleTestMappingObject : NSObject
+@interface MappedCollectionTypeTestObject : NSObject
 
 @property (nonatomic) NSInteger integer;
 @property (nonatomic) NSDictionary *dictionary;
 @property (nonatomic) NSDictionary *dictionaryOfSimpleObjects;
-@property (nonatomic) SimpleTestMappingObject *testMappingObject;
+@property (nonatomic) MappedCollectionTypeTestObject *testMappingObject;
 @property (nonatomic) NSArray *arrayOfTestObjects;
 
 @end

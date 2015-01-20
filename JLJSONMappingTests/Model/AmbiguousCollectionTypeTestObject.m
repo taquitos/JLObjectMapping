@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Joshua Liebowitz. All rights reserved.
 //
 
-#import "ObjectAmbiguousType.h"
+#import "AmbiguousCollectionTypeTestObject.h"
 
-@implementation ObjectAmbiguousType
+@implementation AmbiguousCollectionTypeTestObject
 
 + (NSDateFormatter *)jl_dateFormatterForPropertyNamed:(NSString *)propertyName
 {

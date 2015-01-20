@@ -54,34 +54,46 @@ There are many more examples of how to use the various features in the unit test
 **To assist with serialization/deserialization, there are several methods in NSObject+JLJSONMapping.h you should know about:**
 
 **\+ (NSDictionary *)jl_propertyTypeMap;**
+
 Implement this method in your model object if your objects have properties that are arrays or dictionaries. This is because you'll need to tell the deserializer what class you expect the objects to be when it's done. An example would be if you have an NSArray named "people". A single person might be a JLPerson object. So you'd return: @{@"people":[JLPerson class]} from this method.
 
 **\+ (NSDictionary *)jl_propertyNameMap;**
+
 Implement this method if your JSON objects have properties that map to different names on your model object. An example would be if you have a property on your model named "firstname" but the JSON representation was "first", you'd return: @{@"firstname":@"first"} from this method.
 
 **\+ (NSArray *)jl_excludedFromSerialization;**
+
 Implement this method in your model object if your objects have properties that you don't want to be included in your JSON representation when serialized. For each property you don't want serialized, add it's name to an array. An example would be if you have a property named **password** and you didn't want it to be serialized, you return **@["password"]** from this method.
 
 **\+ (NSDateFormatter *)jl_dateFormatterForPropertyNamed:(NSString *)propertyName;**
-Implement this method if you pass dates around. Right now only passing dates as a string is supported (not as a Long, yet). Return a dateformatter object you that matches the date string you are expecting for the given property.
-An example would be if you have a property named "endDate", you would implement something like this:
 
- (NSDateFormatter *)jl_dateFormatterForPropertyNamed:(NSString *)propertyName{
-    static NSDictionary *formatters;
-    dispatch_once...{
-      NSDateFormatter *dateFormatterForEndDate = ...
-      NSDateFormatter *dateFormattedForStartDate = ...
-      formatters = @{@"endDate":dateFormatterForEndDate,
-             @"startDate": dateFormattedForStartDate};
-             }
+Implement this method if you pass dates around. Right now only passing dates as a string is supported. Return a dateformatter object that matches the date string you are expecting for the given property.
+An example would be if you have NSDate properties named "endDate" and "startDate" but both require different formats, you would implement something like this:
+```objc
++ (NSDateFormatter *)jl_dateFormatterForPropertyNamed:(NSString *)propertyName {
+    static NSDateFormatter *startDateFormatter = nil;
+    static NSDateFormatter *endDateFormatter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        startDateFormatter = [[NSDateFormatter alloc] init];
+        endDateFormatter = [[NSDateFormatter alloc] init];
+        startDateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSS Z";
+        endDateFormatter.dateFormat = @"dd-MM-yyyy'T'HH:mm:ss.SSS Z";
+    });
+    formatters = @{@"endDate":endDateFormatter, @"startDate": startDateFormatter};
     return [formatters objectForKey:propertyName];
-</code>  
 }
+```
 
 **Serialization and Deserialization callbacks**
+
 JLObjectMapping currently supports two callbacks:
 
-**\-(void)jl_didDeserialize:(NSDictionary *)jsonDictionary;** Called after a JSON object or JSONString was deserialized into an object. The receiving object is the new object created. 
+**\-(void)jl_didDeserialize:(NSDictionary *)jsonDictionary;**
+
+Called after a JSON object or JSONString was deserialized into an object. The receiving object is the new object created. 
 This allows you to massage your data further, if needed.
 
-**\-(void)jl_willSerialize;** Called before serialization on the object you are about to serialize. This allows you to massage your data or do validation before serialization.
+**\-(void)jl_willSerialize;**
+
+Called before serialization on the object you are about to serialize. This allows you to massage your data or do validation before serialization.

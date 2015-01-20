@@ -256,7 +256,6 @@
                 self.lastError = [NSError errorWithReason:JLDeserializationErrorPropertyTypeMapNeeded reasonText:@"Ambiguous dictionary of objects, missing propertyTypeMap for property" description:[NSString stringWithFormat:@"Property name:%@", objectPropertyName]];
                 return;
             }
-            dictionaryObjectType = type;
             [dict enumerateKeysAndObjectsWithOptions:0 usingBlock:^(id key, id obj, BOOL *stop) {
                 if ([JLObjectMappingUtils isBasicType:obj]) {
                     [newDictionary setObject:obj forKey:key];

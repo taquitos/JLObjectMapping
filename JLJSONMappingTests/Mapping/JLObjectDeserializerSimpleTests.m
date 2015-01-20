@@ -166,17 +166,29 @@
     XCTAssertEqual(error.code, JLDeserializationErrorInvalidJSON, @"This shouldn't have worked, either the fix is not needed, or something is whack");
 }
 
+//
+//- (void)testPassingObjectToDeserializerExpectingString
+//{
+//    NSString *stringThatCrashes  = @"{\"html\":\"Hi\"}";
+//    HTMLContainingTestObject *crasher = [[HTMLContainingTestObject alloc] init];
+//    crasher.html = stringThatCrashes;
+//    NSDictionary *data = [serializer JSONObjectWithObject:crasher];
+//    NSError *error;
+//    [deserializer objectWithString:(NSString *)data targetClass:[HTMLContainingTestObject class] error:&error];
+//    XCTAssertEqual(error.code, JLDeserializationErrorNSJSONException, @"This shouldn't have worked, we sent in an object to the string method");
+//    XCTAssertEqualObjects(error.userInfo[kObjectMappingFailureReasonKey], @"NSJSONSerialization blew up", @"Should have gotten an error about NSJSON blowing up");
+//    XCTAssertTrue([error.userInfo[kObjectMappingDescriptionKey] rangeOfString:NSInvalidArgumentException].location != NSNotFound);
+//} disabled for https://github.com/taquitos/JLObjectMapping/issues/7
+
+
 - (void)testPassingObjectToDeserializerExpectingString
-{
+{ //added for https://github.com/taquitos/JLObjectMapping/issues/7
     NSString *stringThatCrashes  = @"{\"html\":\"Hi\"}";
     HTMLContainingTestObject *crasher = [[HTMLContainingTestObject alloc] init];
     crasher.html = stringThatCrashes;
     NSDictionary *data = [serializer JSONObjectWithObject:crasher];
     NSError *error;
-    [deserializer objectWithString:(NSString *)data targetClass:[HTMLContainingTestObject class] error:&error];
-    XCTAssertEqual(error.code, JLDeserializationErrorNSJSONException, @"This shouldn't have worked, we sent in an object to the string method");
-    XCTAssertEqualObjects(error.userInfo[kObjectMappingFailureReasonKey], @"NSJSONSerialization blew up", @"Should have gotten an error about NSJSON blowing up");
-    XCTAssertTrue([error.userInfo[kObjectMappingDescriptionKey] rangeOfString:NSInvalidArgumentException].location != NSNotFound);
+    XCTAssertThrows([deserializer objectWithString:(NSString *)data targetClass:[HTMLContainingTestObject class] error:&error], @"Should have gotten an error about NSJSON blowing up");
 }
 
 

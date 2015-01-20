@@ -88,14 +88,16 @@
 - (id)_objectWithString:(NSString *)objectString targetClass:(Class)class
 {
     NSError *error;
-    id jsonObject;
-    @try {
-        jsonObject = [NSJSONSerialization JSONObjectWithData:[objectString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
-    } @catch (NSException *e) {
-        NSString *exceptionData = [NSString stringWithFormat:@"name:%@, reason:%@", e.name, e.reason];
-        self.lastError = [NSError errorWithReason:JLDeserializationErrorNSJSONException reasonText:@"NSJSONSerialization blew up" description:exceptionData];
-        return nil;
-    }
+//    disabled for https://github.com/taquitos/JLObjectMapping/issues/7 exceptions can cause memory leaks.
+//    id jsonObject;
+//    @try {
+//        jsonObject = [NSJSONSerialization JSONObjectWithData:[objectString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
+//    } @catch (NSException *e) {
+//        NSString *exceptionData = [NSString stringWithFormat:@"name:%@, reason:%@", e.name, e.reason];
+//        self.lastError = [NSError errorWithReason:JLDeserializationErrorNSJSONException reasonText:@"NSJSONSerialization blew up" description:exceptionData];
+//        return nil;
+//    }
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:[objectString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
     if (error) {
         self.lastError = [NSError errorWithReason:JLDeserializationErrorInvalidJSON reasonText:@"JSON string probably not properly formed well, or your number was too long (NSJSONSerialization doesn't support <type>_MAX values)" description:[NSString stringWithFormat:@"JSON String: %@", objectString]];
         return nil;

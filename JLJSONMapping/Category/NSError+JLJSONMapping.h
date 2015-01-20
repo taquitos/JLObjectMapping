@@ -16,8 +16,7 @@ typedef NS_ENUM(NSInteger, JLDeserializationError) {
     JLDeserializationErrorInvalidJSON,              //Malformed JSON or other general NSJSONSerialization Error
     JLDeserializationErrorNoPropertiesInClass,      //Couldn't find any properties on Object
     JLDeserializationErrorPropertyTypeMapNeeded,    //Object has Array/Dict as property but missing definition of jl_propertyTypeMap
-    JLDeserializationErrorMorePropertiesExpected,   //JSON to Object mismatch, JSON has extra fields (not a show stopping error for deserializer)
-    JLDeserializationErrorNSJSONException           //Something really bad happened, it blew up the NSJSONSerialization +JSONObjectWithData
+    JLDeserializationErrorMorePropertiesExpected    //JSON to Object mismatch, JSON has extra fields (not a show stopping error for deserializer)
 };
 
 @interface NSError (JLJSONMapping)

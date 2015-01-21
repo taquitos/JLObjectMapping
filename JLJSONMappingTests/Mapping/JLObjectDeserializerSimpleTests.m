@@ -57,7 +57,7 @@
     XCTAssertEqualObjects([objectFromString.testMappingObject.dictionary objectForKey:@"turtles"] , @"nope", @"nested object dictionary property should have transcoded");
 }
 
-- (void)testMoreComplicatedPropertyNameMapping
+- (void)testMoreComplicatedPropertyNameMappingString
 {
     NSString *objectJSON = @"{\"someOtherNameOfInteger\":12345, \"myDictionary\":{\"turtles\":\"yes\"}, \"someTestingObject\" : {\"someOtherNameOfInteger\":9876, \"myDictionary\":{\"turtles\":\"nope\"}, \"someTestingObject\" : {}}, \"dictionaryOfSimpleTestMappingObjects\" :{\"oneObject\":{\"someOtherNameOfInteger\":101, \"myDictionary\":{\"turtles\":\"yup\"}, \"someTestingObject\" : {}}}, \"array\" : [{\"someOtherNameOfInteger\":202, \"myDictionary\":{\"turtles\":\"yar\"}, \"someTestingObject\" : {}}]}";
     MappedCollectionTypeTestObject *objectFromString = [deserializer objectWithString:objectJSON targetClass:[MappedCollectionTypeTestObject class] error:NULL];
@@ -72,6 +72,29 @@
     XCTAssertEqual(objectFromDict.integer, 101, @"nested object in dict simple property should have transcoded");
     XCTAssertEqualObjects([objectFromDict.dictionary objectForKey:@"turtles"], @"yup", @"nested object in dictionary property should have transcoded");
 
+    
+    //test objects that were packaged in an array that went by a different name
+    MappedCollectionTypeTestObject *objectFromArray = [objectFromString.arrayOfTestObjects objectAtIndex:0];
+    
+    XCTAssertEqual(objectFromArray.integer, 202, @"nested object in dict simple property should have transcoded");
+    XCTAssertEqualObjects([objectFromArray.dictionary objectForKey:@"turtles"], @"yar", @"nested object in dictionary property should have transcoded");
+}
+
+- (void)testMoreComplicatedPropertyNameMappingNSData
+{
+    NSString *objectJSON = @"{\"someOtherNameOfInteger\":12345, \"myDictionary\":{\"turtles\":\"yes\"}, \"someTestingObject\" : {\"someOtherNameOfInteger\":9876, \"myDictionary\":{\"turtles\":\"nope\"}, \"someTestingObject\" : {}}, \"dictionaryOfSimpleTestMappingObjects\" :{\"oneObject\":{\"someOtherNameOfInteger\":101, \"myDictionary\":{\"turtles\":\"yup\"}, \"someTestingObject\" : {}}}, \"array\" : [{\"someOtherNameOfInteger\":202, \"myDictionary\":{\"turtles\":\"yar\"}, \"someTestingObject\" : {}}]}";
+    MappedCollectionTypeTestObject *objectFromString = [deserializer objectWithData:[objectJSON dataUsingEncoding:NSUTF8StringEncoding] targetClass:[MappedCollectionTypeTestObject class] error:NULL];
+    
+    XCTAssertEqual(objectFromString.integer, 12345, @"simple property should have transcoded");
+    XCTAssertEqualObjects([objectFromString.dictionary objectForKey:@"turtles"], @"yes", @"dictionary property should have transcoded");
+    XCTAssertEqual(objectFromString.testMappingObject.integer, 9876, @"nested object simple property should have transcoded");
+    XCTAssertEqualObjects([objectFromString.testMappingObject.dictionary objectForKey:@"turtles"] , @"nope", @"nested object dictionary property should have transcoded");
+    
+    //test objects that were packaged in a dictionary that went by a different name
+    MappedCollectionTypeTestObject *objectFromDict = [objectFromString.dictionaryOfSimpleObjects objectForKey:@"oneObject"];
+    XCTAssertEqual(objectFromDict.integer, 101, @"nested object in dict simple property should have transcoded");
+    XCTAssertEqualObjects([objectFromDict.dictionary objectForKey:@"turtles"], @"yup", @"nested object in dictionary property should have transcoded");
+    
     
     //test objects that were packaged in an array that went by a different name
     MappedCollectionTypeTestObject *objectFromArray = [objectFromString.arrayOfTestObjects objectAtIndex:0];

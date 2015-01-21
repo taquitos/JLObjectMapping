@@ -27,5 +27,6 @@ typedef NS_OPTIONS(NSInteger, JLDeserializerOptions) {
 - (id)initWithDeserializerOptions:(JLDeserializerOptions)options NS_DESIGNATED_INITIALIZER;
 - (id)objectWithJSONObject:(id)obj targetClass:(Class)class error:(NSError * __autoreleasing *)error;
 - (id)objectWithString:(NSString *)objectString targetClass:(Class)class error:(NSError * __autoreleasing *)error;
+- (id)objectWithData:(NSData *)objectData targetClass:(Class)class error:(NSError * __autoreleasing *)error;
 
 @end

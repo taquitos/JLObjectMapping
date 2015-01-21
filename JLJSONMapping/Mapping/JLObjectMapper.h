@@ -17,9 +17,20 @@
  
  @param targetClass The class of the object you wish to instantiate
  @param objectString The JSON string that represents the object you wish to instantiate
- @return Returns a new object of type 'class' based on the date from 'objectString' or 'nil' on failure
+ @return Returns a new object of type 'class' based on the data from 'objectString' or 'nil' on failure
  */
 - (id)objectWithString:(NSString *)objectString targetClass:(Class)class error:(NSError * __autoreleasing *)error;
+
+/*
+ Return a new object of type 'class' using the data from 'objectData'
+ 
+ This allows you to transcode NSData containing JSON into an object of any given type.
+ 
+ @param targetClass The class of the object you wish to instantiate
+ @param objectData The JSON NSData that represents the object you wish to instantiate
+ @return Returns a new object of type 'class' based on the data from 'objectData' or 'nil' on failure
+ */
+- (id)objectWithData:(NSData *)objectData targetClass:(Class)class error:(NSError * __autoreleasing *)error;
 
 /* 
  Return a new object of type 'class' using the data from the JSONObject 'obj'
@@ -28,7 +39,7 @@
  
  @param class The class of the object you wish to instantiate
  @param obj The JSONObject that holds the data about the object you wish to instantiate. This is usually an NSDictionary or NSArray
- @return Returns a new object of type 'class' based on the date from 'obj' or 'nil' on failure
+ @return Returns a new object of type 'class' based on the data from 'obj' or 'nil' on failure
  */
 - (id)objectWithJSONObject:(id)obj targetClass:(Class)class error:(NSError * __autoreleasing *)error;
 

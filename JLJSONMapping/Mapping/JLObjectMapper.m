@@ -52,4 +52,9 @@
     return [self.deserializer objectWithString:objectString targetClass:class error:error];
 }
 
+- (id)objectWithData:(NSData *)objectData targetClass:(Class)class error:(NSError * __autoreleasing *)error
+{
+    return [self.deserializer objectWithData:objectData targetClass:class error:error];
+}
+
 @end

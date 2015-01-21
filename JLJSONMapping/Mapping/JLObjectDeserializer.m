@@ -58,10 +58,26 @@
     JLTimer *timer = [self timerForMethodNamed:@"objectWithString:targetClass:error"];
     self.lastError = nil;
     if (objectString == nil) {
-        //short circuit if nil, just set error and bail
-        self.lastError = [NSError errorWithReason:JLDeserializationErrorInvalidJSON reasonText:@"JSON string probably not properly formed" description:[NSString stringWithFormat:@"JSON String: %@", objectString]];
+        self.lastError = [NSError errorWithReason:JLDeserializationErrorInvalidJSON reasonText:@"JSON string is nil" description:nil];
     }
     id object = (self.lastError == nil) ? [self _objectWithString:objectString targetClass:class] : nil;
+    if (error != NULL) {
+        *error = _lastError;
+    }
+    if ([self isReportTimers]) {
+        [timer recordTime:[NSString stringWithFormat:@"Finished initial json parsing, on to setting properties for any %@", NSStringFromClass(class)]];
+    }
+    return object;
+}
+
+- (id)objectWithData:(NSData *)objectData targetClass:(Class)class error:(NSError * __autoreleasing *)error
+{
+    JLTimer *timer = [self timerForMethodNamed:@"objectWithData:targetClass:error"];
+    self.lastError = nil;
+    if (objectData == nil) {
+        self.lastError = [NSError errorWithReason:JLDeserializationErrorInvalidJSON reasonText:@"JSON data is nil" description:nil];
+    }
+    id object = (self.lastError == nil) ? [self _objectWithData:objectData targetClass:class] : nil;
     if (error != NULL) {
         *error = _lastError;
     }
@@ -85,24 +101,30 @@
     return nil;
 }
 
-- (id)_objectWithString:(NSString *)objectString targetClass:(Class)class
+- (id)_objectWithData:(NSData *)objectData targetClass:(Class)class
 {
     NSError *error;
-//    disabled for https://github.com/taquitos/JLObjectMapping/issues/7 exceptions can cause memory leaks.
-//    id jsonObject;
-//    @try {
-//        jsonObject = [NSJSONSerialization JSONObjectWithData:[objectString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
-//    } @catch (NSException *e) {
-//        NSString *exceptionData = [NSString stringWithFormat:@"name:%@, reason:%@", e.name, e.reason];
-//        self.lastError = [NSError errorWithReason:JLDeserializationErrorNSJSONException reasonText:@"NSJSONSerialization blew up" description:exceptionData];
-//        return nil;
-//    }
-    id jsonObject = [NSJSONSerialization JSONObjectWithData:[objectString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
+    //    disabled for https://github.com/taquitos/JLObjectMapping/issues/7 exceptions can cause memory leaks.
+    //    id jsonObject;
+    //    @try {
+    //        jsonObject = [NSJSONSerialization JSONObjectWithData:[objectString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
+    //    } @catch (NSException *e) {
+    //        NSString *exceptionData = [NSString stringWithFormat:@"name:%@, reason:%@", e.name, e.reason];
+    //        self.lastError = [NSError errorWithReason:JLDeserializationErrorNSJSONException reasonText:@"NSJSONSerialization blew up" description:exceptionData];
+    //        return nil;
+    //    }
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:objectData options:0 error:&error];
     if (error) {
-        self.lastError = [NSError errorWithReason:JLDeserializationErrorInvalidJSON reasonText:@"JSON string probably not properly formed well, or your number was too long (NSJSONSerialization doesn't support <type>_MAX values)" description:[NSString stringWithFormat:@"JSON String: %@", objectString]];
+        self.lastError = [NSError errorWithReason:JLDeserializationErrorInvalidJSON reasonText:@"JSON string probably not properly formed well, or your number was too long (NSJSONSerialization doesn't support <type>_MAX values)" description:[NSString stringWithFormat:@"JSON String: %@", [[NSString alloc] initWithData:objectData encoding:NSUTF8StringEncoding]]];
         return nil;
     }
     return [self _objectWithJSONObject:jsonObject targetClass:class];
+}
+
+- (id)_objectWithString:(NSString *)objectString targetClass:(Class)class
+{
+    NSData *data = [objectString dataUsingEncoding:NSUTF8StringEncoding];
+    return [self _objectWithData:data targetClass:class];
 }
 
 #pragma mark - JSON to Object utility methods, the guts of the transcoding

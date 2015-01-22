@@ -89,6 +89,12 @@
 
 - (id)_objectWithJSONObject:(id)obj targetClass:(Class)class
 {
+    if (class == nil) {
+        if ([self isVerbose]) {
+            [self logVerbose:[NSString stringWithFormat:@"Got object: %@\n it's a Foundation object and we also got nil for the target class. Returning original object.", obj]];
+        }
+        return obj;
+    }
     if ([obj isKindOfClass:[NSDictionary class]]) {
         return [self _newObjectFromJSONDictionary:obj targetClass:class];
     } else if ([obj isKindOfClass:[NSArray class]]) {
@@ -118,7 +124,7 @@
         self.lastError = [NSError errorWithReason:JLDeserializationErrorInvalidJSON reasonText:@"JSON string probably not properly formed well, or your number was too long (NSJSONSerialization doesn't support <type>_MAX values)" description:[NSString stringWithFormat:@"JSON String: %@", [[NSString alloc] initWithData:objectData encoding:NSUTF8StringEncoding]]];
         return nil;
     }
-    return [self _objectWithJSONObject:jsonObject targetClass:class];
+    return (class != nil) ? [self _objectWithJSONObject:jsonObject targetClass:class] : jsonObject;
 }
 
 - (id)_objectWithString:(NSString *)objectString targetClass:(Class)class

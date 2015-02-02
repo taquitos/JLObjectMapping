@@ -42,6 +42,11 @@
     return [self.serializer JSONObjectWithObject:object];
 }
 
+- (NSData *)dataWithObject:(NSObject *)object
+{
+    return [self.serializer dataWithObject:object];
+}
+
 - (id)objectWithJSONObject:(id)obj targetClass:(Class)class error:(NSError * __autoreleasing *)error
 {
     return [self.deserializer objectWithJSONObject:obj targetClass:class error:error];

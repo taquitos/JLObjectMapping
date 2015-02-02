@@ -214,7 +214,7 @@
         if (!propertyType) {
             if ([JLObjectMappingUtils isValueType:propertyProperties]) {
                 id propertyValue = [obj objectForKey:JSONpropertyNameKey];
-                if (propertyValue) {
+                if (propertyValue && propertyValue != [NSNull null]) {
                     [newObject setValue:propertyValue forKey:objectPropertyName];
                 }
             }
@@ -307,11 +307,9 @@
 - (void)_transcodeProperty:(id)jsonObject objectPropertyName:(NSString *)objectPropertyName JSONpropertyName:(NSString *)JSONpropertyName propertyType:(Class)type owningObject:(id)newObject
 {
     id propertyValue = [jsonObject objectForKey:JSONpropertyName];
-    if ([propertyValue isKindOfClass:[NSNull class]] || propertyValue == nil) {
-        [newObject setValue:nil forKey:objectPropertyName];
+    if (propertyValue == [NSNull null] || propertyValue == nil) {
         return;
     }
-    
     if ([propertyValue isKindOfClass:[NSArray class]]) {
         [self _transcodeArrayProperty:propertyValue objectPropertyName:objectPropertyName owningObject:newObject];
     } else if ([propertyValue isKindOfClass:[NSDictionary class]] && type) {

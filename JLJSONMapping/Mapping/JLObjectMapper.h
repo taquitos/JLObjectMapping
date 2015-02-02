@@ -63,4 +63,13 @@
  */
 - (id)JSONObjectWithObject:(NSObject *)object;
 
+/* Return NSData that represents the serialized model object passed in.
+
+ This allows you to serialize an object into a NSData object.
+
+ @param object The object you wish to serialize into JSON
+ @return Returns a NSData object that represents the serilized object passed in or 'nil' on failure.
+ */
+- (NSData *)dataWithObject:(NSObject *)object;
+
 @end

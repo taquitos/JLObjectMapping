@@ -21,6 +21,7 @@ typedef NS_OPTIONS(NSInteger, JLSerializerOptions) {
 
 - (id)initWithSerializerOptions:(JLSerializerOptions)options NS_DESIGNATED_INITIALIZER;
 - (id)JSONObjectWithObject:(NSObject *)object;
+- (NSData *)dataWithObject:(NSObject *)object;
 - (NSString *)JSONStringWithObject:(NSObject *)object;
 
 /*

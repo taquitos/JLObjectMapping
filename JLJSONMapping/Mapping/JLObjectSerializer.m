@@ -65,6 +65,17 @@
     return jsonString;
 }
 
+- (NSData *)dataWithObject:(NSObject *)object
+{
+    id jsonObject = [self JSONObjectWithObject:object];
+    NSError *serializationError;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:jsonObject options:0 error:&serializationError];
+    if (serializationError && [self isVerbose]) {
+        [self logVerbose:[NSString stringWithFormat:@"There was an error serializing your object:%@\nType:%@ Description:%@", serializationError.localizedDescription, [object class], object]];
+    }
+    return data;
+}
+
 - (id)JSONObjectWithObject:(NSObject *)object
 {
     JLTimer *timer = [self timerForMethodNamed:@"JSONObjectWithObject:"];
@@ -98,6 +109,9 @@
     id jsonObject = [self JSONObjectWithObject:object];
     NSError *jsonError;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonObject options:0 error:&jsonError];
+    if (jsonError && [self isVerbose]) {
+        [self logVerbose:[NSString stringWithFormat:@"There was an error serializing your object:%@\nType:%@ Description:%@", jsonError.localizedDescription, [object class], object]];
+    }
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     return jsonString;
 }

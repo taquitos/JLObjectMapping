@@ -142,8 +142,10 @@
     NSMutableArray *objectArray = [NSMutableArray jl_newSparseArray:[obj count]];
     [obj enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id object, NSUInteger idx, BOOL *stop) {
         id newObject = [self _objectWithJSONObject:object targetClass:class];
-        @synchronized(objectArray) {
-            objectArray[idx] = newObject;
+        if (newObject) {
+            @synchronized(objectArray) {
+                objectArray[idx] = newObject;
+            }
         }
     }];
     return objectArray;
@@ -240,8 +242,10 @@
         if (arrayObjectType) {
             [array enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id someObject, NSUInteger idx, BOOL *stop) {
                 id object = [self _objectWithJSONObject:someObject targetClass:arrayObjectType];
-                @synchronized(newArray) {
-                    newArray[idx] = object;
+                if (object) {
+                    @synchronized(newArray) {
+                        newArray[idx] = object;
+                    }
                 }
             }];
         } else {
@@ -256,8 +260,10 @@
                         return;
                     }
                 }
-                @synchronized(newArray) {
-                    newArray[idx] = someObject;
+                if (someObject) {
+                    @synchronized(newArray) {
+                        newArray[idx] = someObject;
+                    }
                 }
             }];
         }

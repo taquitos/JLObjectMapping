@@ -17,9 +17,11 @@
     static NSDateFormatter *dateFormatter;
     dispatch_once(&once, ^{
         dateFormatter = [[NSDateFormatter alloc] init];
-        NSLocale *locale = [NSLocale currentLocale];
-        dateFormatter.dateFormat = @"MM-dd-yyyy 'T'HH:mm:ss.SSS Z";
-        dateFormatter.locale = locale;
+        NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+        NSTimeZone *timeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];
+        [dateFormatter setLocale:enUSPOSIXLocale];
+        [dateFormatter setTimeZone:timeZone];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS"]; //any more than .SSS and the date formatter turns it into 0's
     });
     return dateFormatter;
 }
@@ -41,12 +43,12 @@
 
 - (void)jl_didDeserialize:(NSDictionary *)jsonDictionary
 {
-    
+
 }
 
 - (void)jl_willSerialize
 {
-    
+
 }
 
 @end

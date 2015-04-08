@@ -7,6 +7,7 @@
 //
 
 #import <objc/runtime.h>
+#import "JLCategoryLoader.h"
 #import "JLObjectDeserializer.h"
 #import "JLObjectMappingUtils.h"
 #import "JLTimer.h"
@@ -30,6 +31,7 @@
     if (self) {
         _optionMask = options;
         _collectedPropertyCache = [[NSCache alloc] init];
+        [JLCategoryLoader loadCategories];
     }
     return self;
 }
@@ -368,7 +370,7 @@
     }];
     if ([extras count] > 0) {
         if ((self.optionMask & JLDeserializerOptionReportMissingProperties) != NO) {
-            NSLog(@"JSON object representing a %@ contained extra field(s):%@\n full object graph:\n%@", class, extras, jsonObj);
+            NSLog(@"While deserializing, found JSON object representing a %@ contained extra field(s):%@\n full object graph:\n%@", class, extras, jsonObj);
         }
         if ((self.optionMask & JLDeserializerOptionIgnoreMissingProperties) == NO) {
             self.lastError = [NSError errorWithReason:JLDeserializationErrorMorePropertiesExpected reasonText:@"JSON to Object mismatch, JSON has extra fields" description:[NSString stringWithFormat:@"Class %@ missing properties: %@", class, extras]];

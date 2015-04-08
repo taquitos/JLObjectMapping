@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+void linkMutableArrayCategory();
+
 @interface NSMutableArray (JLJSONMapping)
 
 + (NSMutableArray *)jl_newSparseArray:(NSUInteger)size;

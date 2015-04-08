@@ -14,6 +14,8 @@ NSString * const kObjectMappingFailureReasonKey = @"JLObjectMappingDetailedFailu
 
 @implementation NSError (JLJSONMapping)
 
+void linkErrorCategory(){}
+
 + (NSError *)errorWithReason:(JLDeserializationError)reason reasonText:(NSString *)reasonText description:(NSString *)description
 {
     NSMutableDictionary *infoDict = [[NSMutableDictionary alloc] init];

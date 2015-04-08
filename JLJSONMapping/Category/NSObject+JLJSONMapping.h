@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+void linkObjectCategory();
+
 @interface NSObject (JLJSONMapping)
 
 /* 

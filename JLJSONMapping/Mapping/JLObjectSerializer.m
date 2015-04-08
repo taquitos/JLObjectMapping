@@ -7,6 +7,7 @@
 //
 
 #import <objc/runtime.h>
+#import "JLCategoryLoader.h"
 #import "JLObjectMapper.h"
 #import "JLObjectMappingUtils.h"
 #import "JLObjectSerializer.h"
@@ -30,6 +31,7 @@
     if (self) {
         _optionMask = options;
         _classPropertiesNameMap = [[NSCache alloc] init];
+        [JLCategoryLoader loadCategories];
     }
     return self;
 }

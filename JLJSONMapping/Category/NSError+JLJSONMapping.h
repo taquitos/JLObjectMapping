@@ -19,6 +19,8 @@ typedef NS_ENUM(NSInteger, JLDeserializationError) {
     JLDeserializationErrorMorePropertiesExpected    //JSON to Object mismatch, JSON has extra fields (not a show stopping error for deserializer)
 };
 
+void linkErrorCategory();
+
 @interface NSError (JLJSONMapping)
 
 + (NSError *)errorWithReason:(JLDeserializationError)reason reasonText:(NSString *)reasonText description:(NSString *)description;

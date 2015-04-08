@@ -10,6 +10,8 @@
 
 @implementation NSMutableArray (JLJSONMapping)
 
+void linkMutableArrayCategory(){}
+
 + (NSMutableArray *)jl_newSparseArray:(NSUInteger)size
 {
     NSMutableArray *newArray = [[NSMutableArray alloc] initWithCapacity:size];

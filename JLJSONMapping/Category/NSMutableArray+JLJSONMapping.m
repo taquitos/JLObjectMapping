@@ -8,7 +8,7 @@
 
 #import "NSMutableArray+JLJSONMapping.h"
 
-@implementation NSMutableArray (JLJSONMapping)
+@implementation NSMutableArray (FABJLJSONMapping)
 
 void linkMutableArrayCategory(){}
 

@@ -4,12 +4,12 @@
 //  Created by Joshua Liebowitz on 4/7/15.
 //
 
-#import "JLCategoryLoader.h"
+#import "FABJLCategoryLoader.h"
 #import "NSError+JLJSONMapping.h"
 #import "NSMutableArray+JLJSONMapping.h"
 #import "NSObject+JLJSONMapping.h"
 
-@implementation JLCategoryLoader
+@implementation FABJLCategoryLoader
 
 + (void)loadCategories
 {

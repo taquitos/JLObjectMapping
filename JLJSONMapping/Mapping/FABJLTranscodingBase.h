@@ -10,11 +10,11 @@
 
 #import <Foundation/Foundation.h>
 
-@class JLTimer;
+@class FABJLTimer;
 
-@interface JLTranscodingBase : NSObject
+@interface FABJLTranscodingBase : NSObject
 
-- (JLTimer *)timerForMethodNamed:(NSString *)methodName;
+- (FABJLTimer *)timerForMethodNamed:(NSString *)methodName;
 - (BOOL)isReportTimers;
 - (BOOL)isVerbose;
 - (void)logVerbose:(NSString *)message;

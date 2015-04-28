@@ -10,7 +10,7 @@
 
 void linkObjectCategory();
 
-@interface NSObject (JLJSONMapping)
+@interface NSObject (FABJLJSONMapping)
 
 /* 
  Return a new dictionary containing the name and clases of collection-type properties

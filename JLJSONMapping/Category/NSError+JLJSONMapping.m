@@ -12,7 +12,7 @@ NSString * const kObjectMappingDomain = @"com.mydoghatestechnology.objectmapping
 NSString * const kObjectMappingDescriptionKey = @"JLObjectMappingDescriptionKey";
 NSString * const kObjectMappingFailureReasonKey = @"JLObjectMappingDetailedFailureReasonKey";
 
-@implementation NSError (JLJSONMapping)
+@implementation NSError (FABJLJSONMapping)
 
 void linkErrorCategory(){}
 

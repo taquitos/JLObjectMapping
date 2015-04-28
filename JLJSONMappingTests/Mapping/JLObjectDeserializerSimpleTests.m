@@ -12,8 +12,8 @@
 #import "ArrayHoldingTestObject.h"
 #import "EnumerationContainingTestObject.h"
 #import "HTMLContainingTestObject.h"
-#import "JLObjectDeserializer.h"
-#import "JLObjectSerializer.h"
+#import "FABJLObjectDeserializer.h"
+#import "FABJLObjectSerializer.h"
 #import "MappedCollectionTypeTestObject.h"
 #import "NSError+JLJSONMapping.h"
 #import "SimpleTestObject.h"
@@ -25,14 +25,14 @@
 
 @implementation JLObjectDeserializerSimpleTests
 {
-    JLObjectDeserializer *deserializer;
-    JLObjectSerializer *serializer;
+    FABJLObjectDeserializer *deserializer;
+    FABJLObjectSerializer *serializer;
 }
 
 - (void)setUp
 {
-    deserializer = [[JLObjectDeserializer alloc] init];
-    serializer = [[JLObjectSerializer alloc] init];
+    deserializer = [[FABJLObjectDeserializer alloc] init];
+    serializer = [[FABJLObjectSerializer alloc] init];
     [super setUp];
 }
 
@@ -105,7 +105,7 @@
 
 - (void)testJLDeserializerIgnoreMissingProperties
 {
-    deserializer = [[JLObjectDeserializer alloc] initWithDeserializerOptions:JLDeserializerOptionReportMissingProperties];
+    deserializer = [[FABJLObjectDeserializer alloc] initWithDeserializerOptions:FABJLDeserializerOptionReportMissingProperties];
     NSString *jsonWithExtraProperty = @"{\"turtle\":\"yes\"}";
     NSError *error;
     [deserializer objectWithString:jsonWithExtraProperty targetClass:[AnotherSimpleTestObject class] error:&error];
@@ -114,7 +114,7 @@
 
 - (void)testJLDeserializerIgnoreMissingPropertiesDontError
 {
-    deserializer = [[JLObjectDeserializer alloc] initWithDeserializerOptions:JLDeserializerOptionIgnoreMissingProperties];
+    deserializer = [[FABJLObjectDeserializer alloc] initWithDeserializerOptions:FABJLDeserializerOptionIgnoreMissingProperties];
     NSString *jsonWithExtraProperty = @"{\"turtle\":\"yes\"}";
     NSError *error;
     [deserializer objectWithString:jsonWithExtraProperty targetClass:[AnotherSimpleTestObject class] error:&error];
@@ -131,7 +131,7 @@
 
 - (void)testDictionaryJLDeserializerErrorOnAmbiguousType
 {
-    deserializer = [[JLObjectDeserializer alloc] initWithDeserializerOptions:JLDeserializerOptionErrorOnAmbiguousType | JLDeserializerOptionVerboseOutput];
+    deserializer = [[FABJLObjectDeserializer alloc] initWithDeserializerOptions:FABJLDeserializerOptionErrorOnAmbiguousType | FABJLDeserializerOptionVerboseOutput];
     NSString *jsonWithExtraProperty = @"{\"someDictionary\":{\"someInt\":5}}";
     NSError *error;
     [deserializer objectWithString:jsonWithExtraProperty targetClass:[AmbiguousCollectionTypeTestObject class] error:&error];
@@ -148,7 +148,7 @@
 
 - (void)testArrayJLDeserializerErrorOnAmbiguousType
 {
-    deserializer = [[JLObjectDeserializer alloc] initWithDeserializerOptions:JLDeserializerOptionErrorOnAmbiguousType | JLDeserializerOptionVerboseOutput];
+    deserializer = [[FABJLObjectDeserializer alloc] initWithDeserializerOptions:FABJLDeserializerOptionErrorOnAmbiguousType | FABJLDeserializerOptionVerboseOutput];
     NSString *jsonWithExtraProperty = @"{\"someArray\":[{\"someInt\":5}]}";
     NSError *error;
     [deserializer objectWithString:jsonWithExtraProperty targetClass:[AmbiguousCollectionTypeTestObject class] error:&error];
@@ -157,7 +157,7 @@
 
 - (void)testArrayJLDeserializerWithType
 {
-    deserializer = [[JLObjectDeserializer alloc] initWithDeserializerOptions:JLDeserializerOptionErrorOnAmbiguousType | JLDeserializerOptionVerboseOutput];
+    deserializer = [[FABJLObjectDeserializer alloc] initWithDeserializerOptions:FABJLDeserializerOptionErrorOnAmbiguousType | FABJLDeserializerOptionVerboseOutput];
     ArrayHoldingTestObject *testObject = [ArrayHoldingTestObject newArrayHoldingTestObject];
     NSString *jsonString = [serializer JSONStringWithObject:testObject];
     

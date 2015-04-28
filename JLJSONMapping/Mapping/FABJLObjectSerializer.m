@@ -7,47 +7,47 @@
 //
 
 #import <objc/runtime.h>
-#import "JLCategoryLoader.h"
-#import "JLObjectMapper.h"
-#import "JLObjectMappingUtils.h"
-#import "JLObjectSerializer.h"
-#import "JLTimer.h"
+#import "FABJLCategoryLoader.h"
+#import "FABJLObjectMapper.h"
+#import "FABJLObjectMappingUtils.h"
+#import "FABJLObjectSerializer.h"
+#import "FABJLTimer.h"
 #import "NSMutableArray+JLJSONMapping.h"
 #import "NSObject+JLJSONMapping.h"
 
-@interface JLObjectSerializer()
+@interface FABJLObjectSerializer()
 
-@property (nonatomic) JLSerializerOptions optionMask;
+@property (nonatomic) FABJLSerializerOptions optionMask;
 @property (nonatomic) NSSet *serializableClasses;
 @property (nonatomic) NSCache *classPropertiesNameMap;
 
 @end
 
-@implementation JLObjectSerializer
+@implementation FABJLObjectSerializer
 
-- (id)initWithSerializerOptions:(JLSerializerOptions)options
+- (id)initWithSerializerOptions:(FABJLSerializerOptions)options
 {
     self = [super init];
     if (self) {
         _optionMask = options;
         _classPropertiesNameMap = [[NSCache alloc] init];
-        [JLCategoryLoader loadCategories];
+        [FABJLCategoryLoader loadCategories];
     }
     return self;
 }
 
 - (id)init
 {
-    return [self initWithSerializerOptions:JLSerializerOptionDefaultOptionsMask];
+    return [self initWithSerializerOptions:FABJLSerializerOptionDefaultOptionsMask];
 }
 
 #pragma mark - API
 - (NSString *)JSONStringWithObject:(NSObject *)object
 {
-    JLTimer *timer = [self timerForMethodNamed:@"JSONStringWithObject:"];
+    FABJLTimer *timer = [self timerForMethodNamed:@"JSONStringWithObject:"];
     id jsonObject = [self JSONObjectWithObject:object];
     NSString *jsonString;
-    if (self.optionMask & JLSerializerOptionUseNSJSONSerializer) {
+    if (self.optionMask & FABJLSerializerOptionUseNSJSONSerializer) {
         //you probably don't want this...
         NSError *error;
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonObject options:0 error:&error];
@@ -80,7 +80,7 @@
 
 - (id)JSONObjectWithObject:(NSObject *)object
 {
-    JLTimer *timer = [self timerForMethodNamed:@"JSONObjectWithObject:"];
+    FABJLTimer *timer = [self timerForMethodNamed:@"JSONObjectWithObject:"];
     id returnObject;
     if ([object isKindOfClass:[NSDictionary class]]) {
         returnObject = [self _dictionaryFromObjectDictionary:(NSDictionary*)object];
@@ -91,7 +91,7 @@
     } else if ([object class] == [NSDate class]) {
         NSDateFormatter *dateFormatter = [[object class] jl_dateFormatterForPropertyNamed:nil];
         returnObject = [dateFormatter stringFromDate:(NSDate *)object];
-    } else if ([JLObjectMappingUtils isBasicType:object]) {
+    } else if ([FABJLObjectMappingUtils isBasicType:object]) {
         //we have a simple object that can be trancoded by NSJSONSerialization so just return it
         returnObject = object;
     } else {
@@ -122,8 +122,8 @@
 - (NSString *)_JSONStringFromJSONObject:(NSObject *)jsonObject
 {
     NSString *jsonString;
-    if ([JLObjectMappingUtils isBasicType:jsonObject]) {
-        jsonString = [JLObjectMappingUtils stringForBasicType:jsonObject];
+    if ([FABJLObjectMappingUtils isBasicType:jsonObject]) {
+        jsonString = [FABJLObjectMappingUtils stringForBasicType:jsonObject];
     } else if ([jsonObject isKindOfClass:[NSDictionary class]]) {
         NSMutableString *objectString = [[NSMutableString alloc] initWithString:@"{"];
         [(NSDictionary *)jsonObject enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -254,7 +254,7 @@
                 } else if ([propertyJSONValue isKindOfClass:[NSDate class]]) {
                     NSDateFormatter *df = [[obj class] jl_dateFormatterForPropertyNamed:propertyKey];
                     propertyJSONValue = [df stringFromDate:(NSDate*)propertyJSONValue];
-                } else if (![JLObjectMappingUtils isBasicType:propertyJSONValue]) {
+                } else if (![FABJLObjectMappingUtils isBasicType:propertyJSONValue]) {
                     propertyJSONValue = [self _dictionaryFromObject:propertyJSONValue];
                 }
                 if (propertyJSONValue) {
@@ -278,12 +278,12 @@
 #pragma mark - Serialization options
 - (BOOL)isVerbose
 {
-    return (self.optionMask & JLSerializerOptionVerboseOutput) != NO;
+    return (self.optionMask & FABJLSerializerOptionVerboseOutput) != NO;
 }
 
 - (BOOL)isReportTimers
 {
-    return (self.optionMask & JLSerializerOptionReportTimers) != NO;
+    return (self.optionMask & FABJLSerializerOptionReportTimers) != NO;
 }
 
 @end

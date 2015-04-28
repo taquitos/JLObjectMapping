@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JLObjectMappingUtils : NSObject
+@interface FABJLObjectMappingUtils : NSObject
 
 + (Class)classFromPropertyProperties:(NSString *)propertiesString;
 + (BOOL)isBasicType:(id)obj;

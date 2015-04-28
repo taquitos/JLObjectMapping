@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Joshua Liebowitz. All rights reserved.
 //
 
-#import "JLTimer.h"
+#import "FABJLTimer.h"
 
-@interface JLTimer ()
+@interface FABJLTimer ()
 
 @property (nonatomic, copy) NSString *timerName;
 @property (nonatomic) CFAbsoluteTime startTime;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation JLTimer
+@implementation FABJLTimer
 
 - (id)initWithStartTimerName:(NSString *)name
 {

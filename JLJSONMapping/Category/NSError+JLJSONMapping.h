@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, JLDeserializationError) {
 
 void linkErrorCategory();
 
-@interface NSError (JLJSONMapping)
+@interface NSError (FABJLJSONMapping)
 
 + (NSError *)errorWithReason:(JLDeserializationError)reason reasonText:(NSString *)reasonText description:(NSString *)description;
 

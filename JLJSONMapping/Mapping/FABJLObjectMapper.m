@@ -9,25 +9,25 @@
 //  Copyright (c) 2013 Joshua Liebowitz. All rights reserved.
 //
 
-#import "JLObjectDeserializer.h"
-#import "JLObjectMapper.h"
-#import "JLObjectSerializer.h"
+#import "FABJLObjectDeserializer.h"
+#import "FABJLObjectMapper.h"
+#import "FABJLObjectSerializer.h"
 
-@interface JLObjectMapper()
+@interface FABJLObjectMapper()
 
-@property(nonatomic) JLObjectSerializer *serializer;
-@property(nonatomic) JLObjectDeserializer *deserializer;
+@property(nonatomic) FABJLObjectSerializer *serializer;
+@property(nonatomic) FABJLObjectDeserializer *deserializer;
 
 @end
 
-@implementation JLObjectMapper
+@implementation FABJLObjectMapper
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        _serializer = [[JLObjectSerializer alloc] init];
-        _deserializer = [[JLObjectDeserializer alloc] init];
+        _serializer = [[FABJLObjectSerializer alloc] init];
+        _deserializer = [[FABJLObjectDeserializer alloc] init];
     }
     return self;
 }

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Joshua Liebowitz. All rights reserved.
 //
 
-#import "JLObjectMappingUtils.h"
+#import "FABJLObjectMappingUtils.h"
 
-@implementation JLObjectMappingUtils
+@implementation FABJLObjectMappingUtils
 
 + (BOOL)isBasicType:(id)obj
 {

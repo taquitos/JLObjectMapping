@@ -32,7 +32,7 @@
                                                            [object simpleObjectWithIntegerValue:15]
                                        ]];
     
-    object.DictionaryOfSimpleTestObjects = @{ @"0": [object simpleObjectWithIntegerValue:0],
+    object.dictionaryOfSimpleTestObjects = @{ @"0": [object simpleObjectWithIntegerValue:0],
                                               @"1": [object simpleObjectWithIntegerValue:1],
                                               @"2": [object simpleObjectWithIntegerValue:2],
                                               @"3": [object simpleObjectWithIntegerValue:3],

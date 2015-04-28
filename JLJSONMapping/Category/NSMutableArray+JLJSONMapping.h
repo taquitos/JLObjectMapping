@@ -10,7 +10,7 @@
 
 void linkMutableArrayCategory();
 
-@interface NSMutableArray (JLJSONMapping)
+@interface NSMutableArray (FABJLJSONMapping)
 
 + (NSMutableArray *)jl_newSparseArray:(NSUInteger)size;
 

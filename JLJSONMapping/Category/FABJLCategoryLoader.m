@@ -13,9 +13,9 @@
 
 + (void)loadCategories
 {
-    linkErrorCategory();
-    linkMutableArrayCategory();
-    linkObjectCategory();
+    linkFABErrorCategory();
+    linkFABMutableArrayCategory();
+    linkFABObjectCategory();
 }
 
 @end

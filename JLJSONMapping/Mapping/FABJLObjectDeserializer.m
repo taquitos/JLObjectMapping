@@ -60,7 +60,7 @@
     FABJLTimer *timer = [self timerForMethodNamed:@"objectWithString:targetClass:error"];
     self.lastError = nil;
     if (objectString == nil) {
-        self.lastError = [NSError errorWithReason:JLDeserializationErrorInvalidJSON reasonText:@"JSON string is nil" description:nil];
+        self.lastError = [NSError errorWithReason:FABJLDeserializationErrorInvalidJSON reasonText:@"JSON string is nil" description:nil];
     }
     id object = (self.lastError == nil) ? [self _objectWithString:objectString targetClass:class] : nil;
     if (error != NULL) {
@@ -77,7 +77,7 @@
     FABJLTimer *timer = [self timerForMethodNamed:@"objectWithData:targetClass:error"];
     self.lastError = nil;
     if (objectData == nil) {
-        self.lastError = [NSError errorWithReason:JLDeserializationErrorInvalidJSON reasonText:@"JSON data is nil" description:nil];
+        self.lastError = [NSError errorWithReason:FABJLDeserializationErrorInvalidJSON reasonText:@"JSON data is nil" description:nil];
     }
     id object = (self.lastError == nil) ? [self _objectWithData:objectData targetClass:class] : nil;
     if (error != NULL) {
@@ -123,7 +123,7 @@
     //    }
     id jsonObject = [NSJSONSerialization JSONObjectWithData:objectData options:0 error:&error];
     if (error) {
-        self.lastError = [NSError errorWithReason:JLDeserializationErrorInvalidJSON reasonText:@"JSON string probably not properly formed well, or your number was too long (NSJSONSerialization doesn't support <type>_MAX values)" description:[NSString stringWithFormat:@"JSON String: %@", [[NSString alloc] initWithData:objectData encoding:NSUTF8StringEncoding]]];
+        self.lastError = [NSError errorWithReason:FABJLDeserializationErrorInvalidJSON reasonText:@"JSON string probably not properly formed well, or your number was too long (NSJSONSerialization doesn't support <type>_MAX values)" description:[NSString stringWithFormat:@"JSON String: %@", [[NSString alloc] initWithData:objectData encoding:NSUTF8StringEncoding]]];
         return nil;
     }
     return (class != nil) ? [self _objectWithJSONObject:jsonObject targetClass:class] : jsonObject;
@@ -198,7 +198,7 @@
     }
     if ([collectedProperties count] == 0 && obj) {
         //I shouldn't have gotten here, maybe passing in NSDate will do it?
-        self.lastError = [NSError errorWithReason:JLDeserializationErrorNoPropertiesInClass reasonText:@"Class has no properties, can't deserialize" description:[NSString stringWithFormat:@"Class %@ missing properties", class]];
+        self.lastError = [NSError errorWithReason:FABJLDeserializationErrorNoPropertiesInClass reasonText:@"Class has no properties, can't deserialize" description:[NSString stringWithFormat:@"Class %@ missing properties", class]];
         return nil;
     }
 
@@ -252,13 +252,13 @@
             }];
         } else {
             if ((self.optionMask & FABJLDeserializerOptionErrorOnAmbiguousType) != NO) {
-                self.lastError = [NSError errorWithReason:JLDeserializationErrorPropertyTypeMapNeeded reasonText:@"Ambiguous array of objects, missing propertyTypeMap for property" description:[NSString stringWithFormat:@"Property name:%@", objectPropertyName]];
+                self.lastError = [NSError errorWithReason:FABJLDeserializationErrorPropertyTypeMapNeeded reasonText:@"Ambiguous array of objects, missing propertyTypeMap for property" description:[NSString stringWithFormat:@"Property name:%@", objectPropertyName]];
                 return;
             }
             [array enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id someObject, NSUInteger idx, BOOL *stop) {
                 if (![FABJLObjectMappingUtils isBasicType:someObject]) {
                     if (self.optionMask & FABJLDeserializerOptionErrorOnAmbiguousType) {
-                        self.lastError = [NSError errorWithReason:JLDeserializationErrorPropertyTypeMapNeeded reasonText:@"Ambiguous array of objects, missing propertyTypeMap for property" description:[NSString stringWithFormat:@"Property name:%@, parent object type:%@", objectPropertyName, [newObject class]]];
+                        self.lastError = [NSError errorWithReason:FABJLDeserializationErrorPropertyTypeMapNeeded reasonText:@"Ambiguous array of objects, missing propertyTypeMap for property" description:[NSString stringWithFormat:@"Property name:%@, parent object type:%@", objectPropertyName, [newObject class]]];
                         return;
                     }
                 }
@@ -289,14 +289,14 @@
         if (!dictionaryObjectType) {
             //we've gone down the tree to the leaves and transcoded. Now just set objects.
             if ((self.optionMask & FABJLDeserializerOptionErrorOnAmbiguousType) != NO) {
-                self.lastError = [NSError errorWithReason:JLDeserializationErrorPropertyTypeMapNeeded reasonText:@"Ambiguous dictionary of objects, missing propertyTypeMap for property" description:[NSString stringWithFormat:@"Property name:%@", objectPropertyName]];
+                self.lastError = [NSError errorWithReason:FABJLDeserializationErrorPropertyTypeMapNeeded reasonText:@"Ambiguous dictionary of objects, missing propertyTypeMap for property" description:[NSString stringWithFormat:@"Property name:%@", objectPropertyName]];
                 return;
             }
             [dict enumerateKeysAndObjectsWithOptions:0 usingBlock:^(id key, id obj, BOOL *stop) {
                 if ([FABJLObjectMappingUtils isBasicType:obj]) {
                     [newDictionary setObject:obj forKey:key];
                 } else if (self.optionMask & FABJLDeserializerOptionErrorOnAmbiguousType) {
-                    self.lastError = [NSError errorWithReason:JLDeserializationErrorPropertyTypeMapNeeded reasonText:@"Ambiguous dictionary of objects, missing propertyTypeMap for property" description:[NSString stringWithFormat:@"Property name:%@, parent object type:%@", objectPropertyName, [newObject class]]];
+                    self.lastError = [NSError errorWithReason:FABJLDeserializationErrorPropertyTypeMapNeeded reasonText:@"Ambiguous dictionary of objects, missing propertyTypeMap for property" description:[NSString stringWithFormat:@"Property name:%@, parent object type:%@", objectPropertyName, [newObject class]]];
                     *stop = YES;
                 }
             }];
@@ -373,7 +373,7 @@
             NSLog(@"While deserializing, found JSON object representing a %@ contained extra field(s):%@\n full object graph:\n%@", class, extras, jsonObj);
         }
         if ((self.optionMask & FABJLDeserializerOptionIgnoreMissingProperties) == NO) {
-            self.lastError = [NSError errorWithReason:JLDeserializationErrorMorePropertiesExpected reasonText:@"JSON to Object mismatch, JSON has extra fields" description:[NSString stringWithFormat:@"Class %@ missing properties: %@", class, extras]];
+            self.lastError = [NSError errorWithReason:FABJLDeserializationErrorMorePropertiesExpected reasonText:@"JSON to Object mismatch, JSON has extra fields" description:[NSString stringWithFormat:@"Class %@ missing properties: %@", class, extras]];
         }
     }
 }

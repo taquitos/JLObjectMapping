@@ -109,7 +109,7 @@
     NSString *jsonWithExtraProperty = @"{\"turtle\":\"yes\"}";
     NSError *error;
     [deserializer objectWithString:jsonWithExtraProperty targetClass:[AnotherSimpleTestObject class] error:&error];
-    XCTAssertEqual(error.code, JLDeserializationErrorMorePropertiesExpected);
+    XCTAssertEqual(error.code, FABJLDeserializationErrorMorePropertiesExpected);
 }
 
 - (void)testJLDeserializerIgnoreMissingPropertiesDontError
@@ -135,7 +135,7 @@
     NSString *jsonWithExtraProperty = @"{\"someDictionary\":{\"someInt\":5}}";
     NSError *error;
     [deserializer objectWithString:jsonWithExtraProperty targetClass:[AmbiguousCollectionTypeTestObject class] error:&error];
-    XCTAssertEqual(error.code, JLDeserializationErrorPropertyTypeMapNeeded, @"not defining what the class of the someDictionary object is expecting should throw an exception");
+    XCTAssertEqual(error.code, FABJLDeserializationErrorPropertyTypeMapNeeded, @"not defining what the class of the someDictionary object is expecting should throw an exception");
 }
 
 - (void)testArrayJLDeserializerErrorOnAmbiguousTypeDontError
@@ -152,7 +152,7 @@
     NSString *jsonWithExtraProperty = @"{\"someArray\":[{\"someInt\":5}]}";
     NSError *error;
     [deserializer objectWithString:jsonWithExtraProperty targetClass:[AmbiguousCollectionTypeTestObject class] error:&error];
-    XCTAssertEqual(error.code, JLDeserializationErrorPropertyTypeMapNeeded, @"not defining what the class of the someArray object is expecting should throw an exception");
+    XCTAssertEqual(error.code, FABJLDeserializationErrorPropertyTypeMapNeeded, @"not defining what the class of the someArray object is expecting should throw an exception");
 }
 
 - (void)testArrayJLDeserializerWithType
@@ -174,7 +174,7 @@
     NSString *stringThatCrashes  = @"{\"html\":\"<div><a href=\"http://www.google.com.com\" target=\"_blank\" data-mce-href=\"http://www.google.com\">google.com</a></div><div> 1:21 PM 7/6/14 is this right.</div><div><ol><li>something something yeah ok</li><li>bullets are cool.</li><li>Yet another bullet.</li></ol></div>\"}";
     NSError *error;
     [deserializer objectWithString:stringThatCrashes targetClass:[HTMLContainingTestObject class] error:&error];
-    XCTAssertEqual(error.code, JLDeserializationErrorInvalidJSON, @"This shouldn't have worked, either the fix is not needed, or something is whack");
+    XCTAssertEqual(error.code, FABJLDeserializationErrorInvalidJSON, @"This shouldn't have worked, either the fix is not needed, or something is whack");
 }
 
 - (void)testJsonEscapedFeatureStillNeededForJSONStringFromObject
@@ -186,7 +186,7 @@
     
     NSError *error;
     [deserializer objectWithJSONObject:data targetClass:[HTMLContainingTestObject class] error:&error];
-    XCTAssertEqual(error.code, JLDeserializationErrorInvalidJSON, @"This shouldn't have worked, either the fix is not needed, or something is whack");
+    XCTAssertEqual(error.code, FABJLDeserializationErrorInvalidJSON, @"This shouldn't have worked, either the fix is not needed, or something is whack");
 }
 
 //
@@ -229,28 +229,28 @@
 {
     NSError *error;
     [deserializer objectWithString:@"{\"turtles\"" targetClass:[SimpleTestObject class] error:&error];
-    XCTAssertEqual(error.code, JLDeserializationErrorInvalidJSON, @"This shouldn't have worked, we should have gotten a parsing error");
+    XCTAssertEqual(error.code, FABJLDeserializationErrorInvalidJSON, @"This shouldn't have worked, we should have gotten a parsing error");
 }
 
 - (void)testMalformedJsonNil
 {
     NSError *error;
     [deserializer objectWithString:nil targetClass:[SimpleTestObject class] error:&error];
-    XCTAssertEqual(error.code, JLDeserializationErrorInvalidJSON, @"This shouldn't have worked, we should have gotten a parsing error");
+    XCTAssertEqual(error.code, FABJLDeserializationErrorInvalidJSON, @"This shouldn't have worked, we should have gotten a parsing error");
 }
 
 - (void)testMalformedJsonMissingPropertyValueWithSeperator
 {
     NSError *error;
     [deserializer objectWithString:@"{\"turtles\":}" targetClass:[SimpleTestObject class] error:&error];
-    XCTAssertEqual(error.code, JLDeserializationErrorInvalidJSON, @"This shouldn't have worked, we should have gotten a parsing error");
+    XCTAssertEqual(error.code, FABJLDeserializationErrorInvalidJSON, @"This shouldn't have worked, we should have gotten a parsing error");
 }
 
 - (void)testMalformedJsonMissingPropertyValue
 {
     NSError *error;
     [deserializer objectWithString:@"{\"turtles\"}" targetClass:[SimpleTestObject class] error:&error];
-    XCTAssertEqual(error.code, JLDeserializationErrorInvalidJSON, @"This shouldn't have worked, we should have gotten a parsing error");
+    XCTAssertEqual(error.code, FABJLDeserializationErrorInvalidJSON, @"This shouldn't have worked, we should have gotten a parsing error");
 }
 
 - (void)testSuperClassPropertiesGetsDeserialized

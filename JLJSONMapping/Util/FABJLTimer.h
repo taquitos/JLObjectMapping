@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JLTimer : NSObject
+@interface FABJLTimer : NSObject
 
 - (id)initWithStartTimerName:(NSString *)name NS_DESIGNATED_INITIALIZER;
 

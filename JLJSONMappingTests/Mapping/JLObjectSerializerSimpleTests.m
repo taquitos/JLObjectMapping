@@ -8,8 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "EnumerationContainingTestObject.h"
-#import "JLObjectDeserializer.h"
-#import "JLObjectSerializer.h"
+#import "FABJLObjectDeserializer.h"
+#import "FABJLObjectSerializer.h"
 #import "MappedCollectionTypeTestObject.h"
 #import "SimpleExcludedPropertyTestObject.h"
 #import "SimpleTestObject.h"
@@ -21,8 +21,8 @@ static NSString * const simpleTestObjectString32Bit = @"{\"pBoolean\":1,\"boolea
 
 @interface JLObjectSerializerSimpleTests : XCTestCase
 
-@property (nonatomic) JLObjectSerializer *serializer;
-@property (nonatomic) JLObjectDeserializer *deserializer;
+@property (nonatomic) FABJLObjectSerializer *serializer;
+@property (nonatomic) FABJLObjectDeserializer *deserializer;
 
 @end
 
@@ -31,8 +31,8 @@ static NSString * const simpleTestObjectString32Bit = @"{\"pBoolean\":1,\"boolea
 
 - (void)setUp
 {
-    serializer = [[JLObjectSerializer alloc] init];
-    deserializer = [[JLObjectDeserializer alloc] init];
+    serializer = [[FABJLObjectSerializer alloc] init];
+    deserializer = [[FABJLObjectDeserializer alloc] init];
     [super setUp];
 }
 
@@ -85,7 +85,7 @@ static NSString * const simpleTestObjectString32Bit = @"{\"pBoolean\":1,\"boolea
 - (void)sixtyFourBitFullObjectTranscodeNSJSONSerializer
 {
     SimpleTestObject *newObject = [SimpleTestObject newSimpleTestObjectMaxValues];
-    serializer = [[JLObjectSerializer alloc] initWithSerializerOptions:JLSerializerOptionDefaultOptionsMask | JLSerializerOptionUseNSJSONSerializer];
+    serializer = [[FABJLObjectSerializer alloc] initWithSerializerOptions:FABJLSerializerOptionDefaultOptionsMask | FABJLSerializerOptionUseNSJSONSerializer];
     NSString *objectData = [serializer JSONStringWithObject:newObject];
     NSString *expectedData = @"{\"pUnsignedChar\":254,\"pFloat\":3.402823e+38,\"pLong\":9223372036854775806,\"pInt16\":32766,\"pInt64\":9223372036854775806,\"pChar\":42,\"pShort\":32766,\"number\":9223372036854775806,\"pUnsignedShort\":65534,\"date\":\"2009-02-13T15:31:30.012 -0800\",\"cgfloat\":1.797693134862316e+308,\"pInt32\":2147483646,\"pLongLong\":9223372036854775806,\"pDouble\":1.797693134862316e+308,\"pUnsignedLong\":18446744073709551614,\"boolean\":true,\"pUnsignedLongLong\":18446744073709551614,\"uInteger\":4294967294,\"pUnsignedInt\":4294967294,\"pInt\":2147483646,\"pBoolean\":true,\"integer\":9223372036854775806,\"string\":\"hey there, I'm a test string, here have some unicode: Ω≈ç√∫˜µœ∑´®†¥¨ˆøπ“‘æ…¬˚∆˙©ƒ∂ßåΩ≈ç√∫˜µ≤≥÷™£¢∞§¶•ªº\"}";
     XCTAssertTrue([objectData isEqualToString:expectedData], @"Simple object default values weren't set properly in the resulting JSON");
@@ -94,7 +94,7 @@ static NSString * const simpleTestObjectString32Bit = @"{\"pBoolean\":1,\"boolea
 - (void)thirtyTwoBitFullObjectTranscodeNSJSONSerializer
 {
     SimpleTestObject *newObject = [SimpleTestObject newSimpleTestObjectMaxValues];
-    serializer = [[JLObjectSerializer alloc] initWithSerializerOptions:JLSerializerOptionDefaultOptionsMask | JLSerializerOptionUseNSJSONSerializer];
+    serializer = [[FABJLObjectSerializer alloc] initWithSerializerOptions:FABJLSerializerOptionDefaultOptionsMask | FABJLSerializerOptionUseNSJSONSerializer];
     NSString *objectData = [serializer JSONStringWithObject:newObject];
     NSString *expectedData = @"{\"pBoolean\":true,\"boolean\":1,\"pLongLong\":9223372036854775806,\"string\":\"hey there, I'm a test string, here have some unicode: Ω≈ç√∫˜µœ∑´®†¥¨ˆøπ“‘æ…¬˚∆˙©ƒ∂ßåΩ≈ç√∫˜µ≤≥÷™£¢∞§¶•ªº\",\"pInt64\":9223372036854775806,\"cgfloat\":3.402823e+38,\"pInt16\":32766,\"pUnsignedChar\":254,\"date\":\"2009-02-13T15:31:30.012 -0800\",\"pLong\":2147483646,\"uInteger\":4294967294,\"pUnsignedLong\":4294967294,\"number\":9223372036854775806,\"pUnsignedShort\":65534,\"integer\":2147483646,\"pUnsignedInt\":4294967294,\"pDouble\":1.797693134862316e+308,\"pChar\":42,\"pInt\":2147483646,\"pInt32\":2147483646,\"pFloat\":3.402823e+38,\"pShort\":32766,\"pUnsignedLongLong\":18446744073709551614}";
     XCTAssertTrue([objectData isEqualToString:expectedData], @"Simple object default values weren't set properly in the resulting JSON");

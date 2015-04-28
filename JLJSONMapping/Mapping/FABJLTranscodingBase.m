@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Joshua Liebowitz. All rights reserved.
 //
 
-#import "JLTimer.h"
-#import "JLTranscodingBase.h"
+#import "FABJLTimer.h"
+#import "FABJLTranscodingBase.h"
 
-@implementation JLTranscodingBase
+@implementation FABJLTranscodingBase
 
 #pragma mark - abstract methods, override these
 - (BOOL)isReportTimers
@@ -27,12 +27,12 @@
 }
 
 #pragma mark - utils
-- (JLTimer *)timerForMethodNamed:(NSString *)methodName
+- (FABJLTimer *)timerForMethodNamed:(NSString *)methodName
 {
     if (![self isReportTimers]) {
         return nil;
     }
-    JLTimer *timer = [[JLTimer alloc] initWithStartTimerName:methodName];
+    FABJLTimer *timer = [[FABJLTimer alloc] initWithStartTimerName:methodName];
     return timer;
 }
 

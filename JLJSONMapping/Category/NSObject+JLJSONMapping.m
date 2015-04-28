@@ -8,9 +8,9 @@
 
 #import "NSObject+JLJSONMapping.h"
 
-@implementation NSObject (JLJSONMapping)
+@implementation NSObject (FABJLJSONMapping)
 
-void linkObjectCategory(){}
+void linkFABObjectCategory(){}
 
 + (NSDateFormatter *)jl_dateFormatterForPropertyNamed:(NSString*)propertyName
 {

@@ -8,24 +8,24 @@
 
 #import "NSError+JLJSONMapping.h"
 
-NSString * const kObjectMappingDomain = @"com.mydoghatestechnology.objectmapping";
-NSString * const kObjectMappingDescriptionKey = @"JLObjectMappingDescriptionKey";
-NSString * const kObjectMappingFailureReasonKey = @"JLObjectMappingDetailedFailureReasonKey";
+NSString * const kFABObjectMappingDomain = @"com.mydoghatestechnology.objectmapping";
+NSString * const kFABObjectMappingDescriptionKey = @"JLObjectMappingDescriptionKey";
+NSString * const kFABObjectMappingFailureReasonKey = @"JLObjectMappingDetailedFailureReasonKey";
 
-@implementation NSError (JLJSONMapping)
+@implementation NSError (FABJLJSONMapping)
 
-void linkErrorCategory(){}
+void linkFABErrorCategory(){}
 
-+ (NSError *)errorWithReason:(JLDeserializationError)reason reasonText:(NSString *)reasonText description:(NSString *)description
++ (NSError *)errorWithReason:(FABJLDeserializationError)reason reasonText:(NSString *)reasonText description:(NSString *)description
 {
     NSMutableDictionary *infoDict = [[NSMutableDictionary alloc] init];
     if (reasonText) {
-        [infoDict setObject:reasonText forKey:kObjectMappingFailureReasonKey];
+        [infoDict setObject:reasonText forKey:kFABObjectMappingFailureReasonKey];
     }
     if (description) {
-        [infoDict setObject:description forKey:kObjectMappingDescriptionKey];
+        [infoDict setObject:description forKey:kFABObjectMappingDescriptionKey];
     }
-    return [NSError errorWithDomain:kObjectMappingDomain code:reason userInfo:([infoDict count] > 0) ? infoDict : nil];
+    return [NSError errorWithDomain:kFABObjectMappingDomain code:reason userInfo:([infoDict count] > 0) ? infoDict : nil];
 }
 
 @end

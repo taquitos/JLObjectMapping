@@ -8,8 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "ComplicatedTestObject.h"
-#import "JLObjectDeserializer.h"
-#import "JLObjectSerializer.h"
+#import "FABJLObjectDeserializer.h"
+#import "FABJLObjectSerializer.h"
 #import "SimpleTestObject.h"
 #import "XCTestCase+Util.h"
 
@@ -23,20 +23,20 @@ static NSString * const expectedTestObjectString64Bit = @"{\"setOfSimpleTestObje
 
 @implementation JLObjectSerializerAdvancedTests
 {
-    JLObjectSerializer *serializer;
-    JLObjectDeserializer *deserializer;
+    FABJLObjectSerializer *serializer;
+    FABJLObjectDeserializer *deserializer;
 }
 
 - (void)setUp
 {
-    serializer = [[JLObjectSerializer alloc] init];
-    deserializer = [[JLObjectDeserializer alloc] init];
+    serializer = [[FABJLObjectSerializer alloc] init];
+    deserializer = [[FABJLObjectDeserializer alloc] init];
     [super setUp];
 }
 
 - (void)testEntireObjectSerializationInOrder
 {
-    serializer = [[JLObjectSerializer alloc] initWithSerializerOptions:JLSerializerOptionDefaultOptionsMask];
+    serializer = [[FABJLObjectSerializer alloc] initWithSerializerOptions:FABJLSerializerOptionDefaultOptionsMask];
     if ([XCTestCase is64Bit]) {
         [self sixtyFourBitTestEntireObjectSerialization];
     } else {
@@ -79,7 +79,7 @@ static NSString * const expectedTestObjectString64Bit = @"{\"setOfSimpleTestObje
     NSString *json = [serializer JSONStringWithObject:objects];
     CFAbsoluteTime taskTime = (CFAbsoluteTimeGetCurrent() - startTime);
     NSLog(@"Serializer took:%f", taskTime);
-    JLObjectDeserializer *d = [[JLObjectDeserializer alloc] initWithDeserializerOptions:JLDeserializerOptionDefaultOptionMask];
+    FABJLObjectDeserializer *d = [[FABJLObjectDeserializer alloc] initWithDeserializerOptions:FABJLDeserializerOptionDefaultOptionMask];
     startTime = CFAbsoluteTimeGetCurrent();
     NSError *error;
     NSArray *backagain = [d objectWithString:json targetClass:[SimpleTestObject class] error:&error];

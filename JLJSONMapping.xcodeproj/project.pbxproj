@@ -28,31 +28,31 @@
 		B340CC5F1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC4B1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.m */; };
 		B340CC601A6DEC6700329CF6 /* NSObject+JLJSONMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC4D1A6DEC6700329CF6 /* NSObject+JLJSONMapping.m */; };
 		B340CC611A6DEC6700329CF6 /* NSObject+JLJSONMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC4D1A6DEC6700329CF6 /* NSObject+JLJSONMapping.m */; };
-		B340CC621A6DEC6700329CF6 /* JLObjectDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC501A6DEC6700329CF6 /* JLObjectDeserializer.m */; };
-		B340CC631A6DEC6700329CF6 /* JLObjectDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC501A6DEC6700329CF6 /* JLObjectDeserializer.m */; };
-		B340CC641A6DEC6700329CF6 /* JLObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC521A6DEC6700329CF6 /* JLObjectMapper.m */; };
-		B340CC651A6DEC6700329CF6 /* JLObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC521A6DEC6700329CF6 /* JLObjectMapper.m */; };
-		B340CC661A6DEC6700329CF6 /* JLObjectSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC541A6DEC6700329CF6 /* JLObjectSerializer.m */; };
-		B340CC671A6DEC6700329CF6 /* JLObjectSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC541A6DEC6700329CF6 /* JLObjectSerializer.m */; };
-		B340CC681A6DEC6700329CF6 /* JLTranscodingBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC561A6DEC6700329CF6 /* JLTranscodingBase.m */; };
-		B340CC691A6DEC6700329CF6 /* JLTranscodingBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC561A6DEC6700329CF6 /* JLTranscodingBase.m */; };
-		B340CC6A1A6DEC6700329CF6 /* JLObjectMappingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC591A6DEC6700329CF6 /* JLObjectMappingUtils.m */; };
-		B340CC6B1A6DEC6700329CF6 /* JLObjectMappingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC591A6DEC6700329CF6 /* JLObjectMappingUtils.m */; };
-		B340CC6C1A6DEC6700329CF6 /* JLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC5B1A6DEC6700329CF6 /* JLTimer.m */; };
-		B340CC6D1A6DEC6700329CF6 /* JLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC5B1A6DEC6700329CF6 /* JLTimer.m */; };
+		B340CC621A6DEC6700329CF6 /* FABJLObjectDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC501A6DEC6700329CF6 /* FABJLObjectDeserializer.m */; };
+		B340CC631A6DEC6700329CF6 /* FABJLObjectDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC501A6DEC6700329CF6 /* FABJLObjectDeserializer.m */; };
+		B340CC641A6DEC6700329CF6 /* FABJLObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC521A6DEC6700329CF6 /* FABJLObjectMapper.m */; };
+		B340CC651A6DEC6700329CF6 /* FABJLObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC521A6DEC6700329CF6 /* FABJLObjectMapper.m */; };
+		B340CC661A6DEC6700329CF6 /* FABJLObjectSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC541A6DEC6700329CF6 /* FABJLObjectSerializer.m */; };
+		B340CC671A6DEC6700329CF6 /* FABJLObjectSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC541A6DEC6700329CF6 /* FABJLObjectSerializer.m */; };
+		B340CC681A6DEC6700329CF6 /* FABJLTranscodingBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC561A6DEC6700329CF6 /* FABJLTranscodingBase.m */; };
+		B340CC691A6DEC6700329CF6 /* FABJLTranscodingBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC561A6DEC6700329CF6 /* FABJLTranscodingBase.m */; };
+		B340CC6A1A6DEC6700329CF6 /* FABJLObjectMappingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC591A6DEC6700329CF6 /* FABJLObjectMappingUtils.m */; };
+		B340CC6B1A6DEC6700329CF6 /* FABJLObjectMappingUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC591A6DEC6700329CF6 /* FABJLObjectMappingUtils.m */; };
+		B340CC6C1A6DEC6700329CF6 /* FABJLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC5B1A6DEC6700329CF6 /* FABJLTimer.m */; };
+		B340CC6D1A6DEC6700329CF6 /* FABJLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC5B1A6DEC6700329CF6 /* FABJLTimer.m */; };
 		B340CC751A6DF23700329CF6 /* EnumerationContainingTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B340CC741A6DF23700329CF6 /* EnumerationContainingTestObject.m */; };
-		B399BCA61AD5A355009E1A50 /* JLCategoryLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B399BCA51AD5A355009E1A50 /* JLCategoryLoader.m */; };
-		B399BCA71AD5A355009E1A50 /* JLCategoryLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B399BCA51AD5A355009E1A50 /* JLCategoryLoader.m */; };
-		B399BCB81AD5A76D009E1A50 /* JLCategoryLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = B399BCA41AD5A355009E1A50 /* JLCategoryLoader.h */; };
+		B399BCA61AD5A355009E1A50 /* FABJLCategoryLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B399BCA51AD5A355009E1A50 /* FABJLCategoryLoader.m */; };
+		B399BCA71AD5A355009E1A50 /* FABJLCategoryLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B399BCA51AD5A355009E1A50 /* FABJLCategoryLoader.m */; };
+		B399BCB81AD5A76D009E1A50 /* FABJLCategoryLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = B399BCA41AD5A355009E1A50 /* FABJLCategoryLoader.h */; };
 		B399BCB91AD5A76D009E1A50 /* NSError+JLJSONMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = B340CC481A6DEC6700329CF6 /* NSError+JLJSONMapping.h */; };
 		B399BCBA1AD5A76D009E1A50 /* NSMutableArray+JLJSONMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = B340CC4A1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.h */; };
 		B399BCBB1AD5A76D009E1A50 /* NSObject+JLJSONMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = B340CC4C1A6DEC6700329CF6 /* NSObject+JLJSONMapping.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B399BCBC1AD5A76D009E1A50 /* JLObjectDeserializer.h in Headers */ = {isa = PBXBuildFile; fileRef = B340CC4F1A6DEC6700329CF6 /* JLObjectDeserializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B399BCBD1AD5A76D009E1A50 /* JLObjectMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = B340CC511A6DEC6700329CF6 /* JLObjectMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B399BCBE1AD5A76D009E1A50 /* JLObjectSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = B340CC531A6DEC6700329CF6 /* JLObjectSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B399BCBF1AD5A76D009E1A50 /* JLTranscodingBase.h in Headers */ = {isa = PBXBuildFile; fileRef = B340CC551A6DEC6700329CF6 /* JLTranscodingBase.h */; };
-		B399BCC01AD5A76D009E1A50 /* JLObjectMappingUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B340CC581A6DEC6700329CF6 /* JLObjectMappingUtils.h */; };
-		B399BCC11AD5A76D009E1A50 /* JLTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = B340CC5A1A6DEC6700329CF6 /* JLTimer.h */; };
+		B399BCBC1AD5A76D009E1A50 /* FABJLObjectDeserializer.h in Headers */ = {isa = PBXBuildFile; fileRef = B340CC4F1A6DEC6700329CF6 /* FABJLObjectDeserializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B399BCBD1AD5A76D009E1A50 /* FABJLObjectMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = B340CC511A6DEC6700329CF6 /* FABJLObjectMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B399BCBE1AD5A76D009E1A50 /* FABJLObjectSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = B340CC531A6DEC6700329CF6 /* FABJLObjectSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B399BCBF1AD5A76D009E1A50 /* FABJLTranscodingBase.h in Headers */ = {isa = PBXBuildFile; fileRef = B340CC551A6DEC6700329CF6 /* FABJLTranscodingBase.h */; };
+		B399BCC01AD5A76D009E1A50 /* FABJLObjectMappingUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B340CC581A6DEC6700329CF6 /* FABJLObjectMappingUtils.h */; };
+		B399BCC11AD5A76D009E1A50 /* FABJLTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = B340CC5A1A6DEC6700329CF6 /* FABJLTimer.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,23 +110,23 @@
 		B340CC4B1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+JLJSONMapping.m"; sourceTree = "<group>"; };
 		B340CC4C1A6DEC6700329CF6 /* NSObject+JLJSONMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JLJSONMapping.h"; sourceTree = "<group>"; };
 		B340CC4D1A6DEC6700329CF6 /* NSObject+JLJSONMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JLJSONMapping.m"; sourceTree = "<group>"; };
-		B340CC4F1A6DEC6700329CF6 /* JLObjectDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLObjectDeserializer.h; sourceTree = "<group>"; };
-		B340CC501A6DEC6700329CF6 /* JLObjectDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLObjectDeserializer.m; sourceTree = "<group>"; };
-		B340CC511A6DEC6700329CF6 /* JLObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLObjectMapper.h; sourceTree = "<group>"; };
-		B340CC521A6DEC6700329CF6 /* JLObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLObjectMapper.m; sourceTree = "<group>"; };
-		B340CC531A6DEC6700329CF6 /* JLObjectSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLObjectSerializer.h; sourceTree = "<group>"; };
-		B340CC541A6DEC6700329CF6 /* JLObjectSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLObjectSerializer.m; sourceTree = "<group>"; };
-		B340CC551A6DEC6700329CF6 /* JLTranscodingBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTranscodingBase.h; sourceTree = "<group>"; };
-		B340CC561A6DEC6700329CF6 /* JLTranscodingBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTranscodingBase.m; sourceTree = "<group>"; };
-		B340CC581A6DEC6700329CF6 /* JLObjectMappingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLObjectMappingUtils.h; sourceTree = "<group>"; };
-		B340CC591A6DEC6700329CF6 /* JLObjectMappingUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLObjectMappingUtils.m; sourceTree = "<group>"; };
-		B340CC5A1A6DEC6700329CF6 /* JLTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTimer.h; sourceTree = "<group>"; };
-		B340CC5B1A6DEC6700329CF6 /* JLTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTimer.m; sourceTree = "<group>"; };
+		B340CC4F1A6DEC6700329CF6 /* FABJLObjectDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABJLObjectDeserializer.h; sourceTree = "<group>"; };
+		B340CC501A6DEC6700329CF6 /* FABJLObjectDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABJLObjectDeserializer.m; sourceTree = "<group>"; };
+		B340CC511A6DEC6700329CF6 /* FABJLObjectMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABJLObjectMapper.h; sourceTree = "<group>"; };
+		B340CC521A6DEC6700329CF6 /* FABJLObjectMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABJLObjectMapper.m; sourceTree = "<group>"; };
+		B340CC531A6DEC6700329CF6 /* FABJLObjectSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABJLObjectSerializer.h; sourceTree = "<group>"; };
+		B340CC541A6DEC6700329CF6 /* FABJLObjectSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABJLObjectSerializer.m; sourceTree = "<group>"; };
+		B340CC551A6DEC6700329CF6 /* FABJLTranscodingBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABJLTranscodingBase.h; sourceTree = "<group>"; };
+		B340CC561A6DEC6700329CF6 /* FABJLTranscodingBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABJLTranscodingBase.m; sourceTree = "<group>"; };
+		B340CC581A6DEC6700329CF6 /* FABJLObjectMappingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABJLObjectMappingUtils.h; sourceTree = "<group>"; };
+		B340CC591A6DEC6700329CF6 /* FABJLObjectMappingUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABJLObjectMappingUtils.m; sourceTree = "<group>"; };
+		B340CC5A1A6DEC6700329CF6 /* FABJLTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABJLTimer.h; sourceTree = "<group>"; };
+		B340CC5B1A6DEC6700329CF6 /* FABJLTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABJLTimer.m; sourceTree = "<group>"; };
 		B340CC711A6DED6C00329CF6 /* JLJSONMappingTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "JLJSONMappingTests-Info.plist"; sourceTree = "<group>"; };
 		B340CC731A6DF23700329CF6 /* EnumerationContainingTestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnumerationContainingTestObject.h; sourceTree = "<group>"; };
 		B340CC741A6DF23700329CF6 /* EnumerationContainingTestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnumerationContainingTestObject.m; sourceTree = "<group>"; };
-		B399BCA41AD5A355009E1A50 /* JLCategoryLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLCategoryLoader.h; sourceTree = "<group>"; };
-		B399BCA51AD5A355009E1A50 /* JLCategoryLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLCategoryLoader.m; sourceTree = "<group>"; };
+		B399BCA41AD5A355009E1A50 /* FABJLCategoryLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FABJLCategoryLoader.h; sourceTree = "<group>"; };
+		B399BCA51AD5A355009E1A50 /* FABJLCategoryLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FABJLCategoryLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,8 +246,8 @@
 		B340CC471A6DEC6700329CF6 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				B399BCA41AD5A355009E1A50 /* JLCategoryLoader.h */,
-				B399BCA51AD5A355009E1A50 /* JLCategoryLoader.m */,
+				B399BCA41AD5A355009E1A50 /* FABJLCategoryLoader.h */,
+				B399BCA51AD5A355009E1A50 /* FABJLCategoryLoader.m */,
 				B340CC481A6DEC6700329CF6 /* NSError+JLJSONMapping.h */,
 				B340CC491A6DEC6700329CF6 /* NSError+JLJSONMapping.m */,
 				B340CC4A1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.h */,
@@ -261,14 +261,14 @@
 		B340CC4E1A6DEC6700329CF6 /* Mapping */ = {
 			isa = PBXGroup;
 			children = (
-				B340CC4F1A6DEC6700329CF6 /* JLObjectDeserializer.h */,
-				B340CC501A6DEC6700329CF6 /* JLObjectDeserializer.m */,
-				B340CC511A6DEC6700329CF6 /* JLObjectMapper.h */,
-				B340CC521A6DEC6700329CF6 /* JLObjectMapper.m */,
-				B340CC531A6DEC6700329CF6 /* JLObjectSerializer.h */,
-				B340CC541A6DEC6700329CF6 /* JLObjectSerializer.m */,
-				B340CC551A6DEC6700329CF6 /* JLTranscodingBase.h */,
-				B340CC561A6DEC6700329CF6 /* JLTranscodingBase.m */,
+				B340CC4F1A6DEC6700329CF6 /* FABJLObjectDeserializer.h */,
+				B340CC501A6DEC6700329CF6 /* FABJLObjectDeserializer.m */,
+				B340CC511A6DEC6700329CF6 /* FABJLObjectMapper.h */,
+				B340CC521A6DEC6700329CF6 /* FABJLObjectMapper.m */,
+				B340CC531A6DEC6700329CF6 /* FABJLObjectSerializer.h */,
+				B340CC541A6DEC6700329CF6 /* FABJLObjectSerializer.m */,
+				B340CC551A6DEC6700329CF6 /* FABJLTranscodingBase.h */,
+				B340CC561A6DEC6700329CF6 /* FABJLTranscodingBase.m */,
 			);
 			path = Mapping;
 			sourceTree = "<group>";
@@ -276,10 +276,10 @@
 		B340CC571A6DEC6700329CF6 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				B340CC581A6DEC6700329CF6 /* JLObjectMappingUtils.h */,
-				B340CC591A6DEC6700329CF6 /* JLObjectMappingUtils.m */,
-				B340CC5A1A6DEC6700329CF6 /* JLTimer.h */,
-				B340CC5B1A6DEC6700329CF6 /* JLTimer.m */,
+				B340CC581A6DEC6700329CF6 /* FABJLObjectMappingUtils.h */,
+				B340CC591A6DEC6700329CF6 /* FABJLObjectMappingUtils.m */,
+				B340CC5A1A6DEC6700329CF6 /* FABJLTimer.h */,
+				B340CC5B1A6DEC6700329CF6 /* FABJLTimer.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -299,16 +299,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B399BCBC1AD5A76D009E1A50 /* JLObjectDeserializer.h in Headers */,
-				B399BCBD1AD5A76D009E1A50 /* JLObjectMapper.h in Headers */,
-				B399BCBE1AD5A76D009E1A50 /* JLObjectSerializer.h in Headers */,
+				B399BCBC1AD5A76D009E1A50 /* FABJLObjectDeserializer.h in Headers */,
+				B399BCBD1AD5A76D009E1A50 /* FABJLObjectMapper.h in Headers */,
+				B399BCBE1AD5A76D009E1A50 /* FABJLObjectSerializer.h in Headers */,
 				B399BCBB1AD5A76D009E1A50 /* NSObject+JLJSONMapping.h in Headers */,
-				B399BCB81AD5A76D009E1A50 /* JLCategoryLoader.h in Headers */,
+				B399BCB81AD5A76D009E1A50 /* FABJLCategoryLoader.h in Headers */,
 				B399BCB91AD5A76D009E1A50 /* NSError+JLJSONMapping.h in Headers */,
 				B399BCBA1AD5A76D009E1A50 /* NSMutableArray+JLJSONMapping.h in Headers */,
-				B399BCBF1AD5A76D009E1A50 /* JLTranscodingBase.h in Headers */,
-				B399BCC01AD5A76D009E1A50 /* JLObjectMappingUtils.h in Headers */,
-				B399BCC11AD5A76D009E1A50 /* JLTimer.h in Headers */,
+				B399BCBF1AD5A76D009E1A50 /* FABJLTranscodingBase.h in Headers */,
+				B399BCC01AD5A76D009E1A50 /* FABJLObjectMappingUtils.h in Headers */,
+				B399BCC11AD5A76D009E1A50 /* FABJLTimer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,13 +411,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B340CC5E1A6DEC6700329CF6 /* NSMutableArray+JLJSONMapping.m in Sources */,
-				B340CC681A6DEC6700329CF6 /* JLTranscodingBase.m in Sources */,
-				B340CC6C1A6DEC6700329CF6 /* JLTimer.m in Sources */,
-				B340CC621A6DEC6700329CF6 /* JLObjectDeserializer.m in Sources */,
-				B340CC6A1A6DEC6700329CF6 /* JLObjectMappingUtils.m in Sources */,
-				B340CC661A6DEC6700329CF6 /* JLObjectSerializer.m in Sources */,
-				B399BCA61AD5A355009E1A50 /* JLCategoryLoader.m in Sources */,
-				B340CC641A6DEC6700329CF6 /* JLObjectMapper.m in Sources */,
+				B340CC681A6DEC6700329CF6 /* FABJLTranscodingBase.m in Sources */,
+				B340CC6C1A6DEC6700329CF6 /* FABJLTimer.m in Sources */,
+				B340CC621A6DEC6700329CF6 /* FABJLObjectDeserializer.m in Sources */,
+				B340CC6A1A6DEC6700329CF6 /* FABJLObjectMappingUtils.m in Sources */,
+				B340CC661A6DEC6700329CF6 /* FABJLObjectSerializer.m in Sources */,
+				B399BCA61AD5A355009E1A50 /* FABJLCategoryLoader.m in Sources */,
+				B340CC641A6DEC6700329CF6 /* FABJLObjectMapper.m in Sources */,
 				B340CC601A6DEC6700329CF6 /* NSObject+JLJSONMapping.m in Sources */,
 				B340CC5C1A6DEC6700329CF6 /* NSError+JLJSONMapping.m in Sources */,
 			);
@@ -427,23 +427,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B340CC6B1A6DEC6700329CF6 /* JLObjectMappingUtils.m in Sources */,
-				B340CC671A6DEC6700329CF6 /* JLObjectSerializer.m in Sources */,
-				B340CC631A6DEC6700329CF6 /* JLObjectDeserializer.m in Sources */,
+				B340CC6B1A6DEC6700329CF6 /* FABJLObjectMappingUtils.m in Sources */,
+				B340CC671A6DEC6700329CF6 /* FABJLObjectSerializer.m in Sources */,
+				B340CC631A6DEC6700329CF6 /* FABJLObjectDeserializer.m in Sources */,
 				B340CC461A6DEC4F00329CF6 /* SubclassTestObject.m in Sources */,
-				B340CC691A6DEC6700329CF6 /* JLTranscodingBase.m in Sources */,
+				B340CC691A6DEC6700329CF6 /* FABJLTranscodingBase.m in Sources */,
 				B340CC381A6DEC4F00329CF6 /* XCTestCase+Util.m in Sources */,
 				B340CC611A6DEC6700329CF6 /* NSObject+JLJSONMapping.m in Sources */,
 				B340CC5D1A6DEC6700329CF6 /* NSError+JLJSONMapping.m in Sources */,
-				B340CC651A6DEC6700329CF6 /* JLObjectMapper.m in Sources */,
+				B340CC651A6DEC6700329CF6 /* FABJLObjectMapper.m in Sources */,
 				B340CC431A6DEC4F00329CF6 /* SimpleExcludedPropertyTestObject.m in Sources */,
 				B340CC451A6DEC4F00329CF6 /* SimpleTestObject.m in Sources */,
-				B340CC6D1A6DEC6700329CF6 /* JLTimer.m in Sources */,
+				B340CC6D1A6DEC6700329CF6 /* FABJLTimer.m in Sources */,
 				B340CC751A6DF23700329CF6 /* EnumerationContainingTestObject.m in Sources */,
 				B340CC441A6DEC4F00329CF6 /* MappedCollectionTypeTestObject.m in Sources */,
 				B340CC3C1A6DEC4F00329CF6 /* JLObjectSerializerAdvancedTests.m in Sources */,
 				B340CC3D1A6DEC4F00329CF6 /* JLObjectSerializerSimpleTests.m in Sources */,
-				B399BCA71AD5A355009E1A50 /* JLCategoryLoader.m in Sources */,
+				B399BCA71AD5A355009E1A50 /* FABJLCategoryLoader.m in Sources */,
 				B340CC3B1A6DEC4F00329CF6 /* JLObjectDeserializerSimpleTests.m in Sources */,
 				B340CC421A6DEC4F00329CF6 /* AmbiguousCollectionTypeTestObject.m in Sources */,
 				B340CC3F1A6DEC4F00329CF6 /* ArrayHoldingTestObject.m in Sources */,

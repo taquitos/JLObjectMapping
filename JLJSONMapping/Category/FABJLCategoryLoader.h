@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JLCategoryLoader : NSObject
+@interface FABJLCategoryLoader : NSObject
 
 + (void)loadCategories;
 

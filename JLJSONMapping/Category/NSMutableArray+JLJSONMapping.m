@@ -8,9 +8,9 @@
 
 #import "NSMutableArray+JLJSONMapping.h"
 
-@implementation NSMutableArray (JLJSONMapping)
+@implementation NSMutableArray (FABJLJSONMapping)
 
-void linkMutableArrayCategory(){}
+void linkFABMutableArrayCategory(){}
 
 + (NSMutableArray *)jl_newSparseArray:(NSUInteger)size
 {

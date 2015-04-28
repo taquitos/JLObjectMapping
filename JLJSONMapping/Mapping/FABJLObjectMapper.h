@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JLObjectMapper : NSObject
+@interface FABJLObjectMapper : NSObject
 
 /* 
  Return a new object of type 'class' using the data from 'objectString'

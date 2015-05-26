@@ -32,8 +32,11 @@
         if (range.location != NSNotFound) {
             NSInteger startIndex = range.location + range.length;
             NSRange typeRange = NSMakeRange(startIndex, ([typeItem length] - 1) - startIndex);
-            NSString *typeString = [typeItem substringWithRange:typeRange];
-            Class classOfProperty = NSClassFromString(typeString);
+            NSString *className = [typeItem substringWithRange:typeRange];
+            Class classOfProperty = NSClassFromString(className);
+            if (!classOfProperty) {
+                NSLog(@"Class: %@ not loaded in runtime. To fix this, you can load it by referencing the class somewhere before using the mapper (calling [%@ class]), or you can add -ObjC to your linker flags", className, className);
+            }
             return classOfProperty;
         }
     }

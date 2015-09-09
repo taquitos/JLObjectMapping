@@ -10,6 +10,8 @@
 
 @interface JLTimer : NSObject
 
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 - (id)initWithStartTimerName:(NSString *)name NS_DESIGNATED_INITIALIZER;
 
 //can be called multiple times, only responds with time elapsed between invocations after responding unless it is the first

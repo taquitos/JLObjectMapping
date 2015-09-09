@@ -358,7 +358,7 @@
 		B32198911749A10700066DA7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Joshua Liebowitz";
 			};
 			buildConfigurationList = B32198941749A10700066DA7 /* Build configuration list for PBXProject "JLJSONMapping" */;
@@ -478,6 +478,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;

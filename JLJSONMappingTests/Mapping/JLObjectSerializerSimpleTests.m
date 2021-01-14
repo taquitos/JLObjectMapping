@@ -87,7 +87,9 @@ static NSString * const simpleTestObjectString32Bit = @"{\"pBoolean\":1,\"boolea
     SimpleTestObject *newObject = [SimpleTestObject newSimpleTestObjectMaxValues];
     serializer = [[JLObjectSerializer alloc] initWithSerializerOptions:JLSerializerOptionDefaultOptionsMask | JLSerializerOptionUseNSJSONSerializer];
     NSString *objectData = [serializer JSONStringWithObject:newObject];
-    NSString *expectedData = @"{\"pUnsignedChar\":254,\"pFloat\":3.402823e+38,\"pLong\":9223372036854775806,\"pInt16\":32766,\"pInt64\":9223372036854775806,\"pChar\":42,\"pShort\":32766,\"number\":9223372036854775806,\"pUnsignedShort\":65534,\"date\":\"2009-02-13T15:31:30.012 -0800\",\"cgfloat\":1.797693134862316e+308,\"pInt32\":2147483646,\"pLongLong\":9223372036854775806,\"pDouble\":1.797693134862316e+308,\"pUnsignedLong\":18446744073709551614,\"boolean\":true,\"pUnsignedLongLong\":18446744073709551614,\"uInteger\":4294967294,\"pUnsignedInt\":4294967294,\"pInt\":2147483646,\"pBoolean\":true,\"integer\":9223372036854775806,\"string\":\"hey there, I'm a test string, here have some unicode: Ω≈ç√∫˜µœ∑´®†¥¨ˆøπ“‘æ…¬˚∆˙©ƒ∂ßåΩ≈ç√∫˜µ≤≥÷™£¢∞§¶•ªº\"}";
+    NSString *expectedData = @"{\"pUnsignedChar\":254,\"pFloat\":3.4028234663852886e+38,\"pLong\":9223372036854775806,\"pInt16\":32766,\"pInt64\":9223372036854775806,\"pChar\":42,\"pShort\":32766,\"number\":9223372036854775806,\"pUnsignedShort\":65534,\"date\":\"2009-02-13T15:31:30.012 -0800\",\"cgfloat\":1.7976931348623157e+308,\"pInt32\":2147483646,\"pLongLong\":9223372036854775806,\"pDouble\":1.7976931348623157e+308,\"pUnsignedLong\":18446744073709551614,\"boolean\":true,\"pUnsignedLongLong\":18446744073709551614,\"uInteger\":4294967294,\"pUnsignedInt\":4294967294,\"pInt\":2147483646,\"pBoolean\":true,\"integer\":9223372036854775806,\"string\":\"hey there, I'm a test string, here have some unicode: Ω≈ç√∫˜µœ∑´®†¥¨ˆøπ“‘æ…¬˚∆˙©ƒ∂ßåΩ≈ç√∫˜µ≤≥÷™£¢∞§¶•ªº\"}";
+  NSLog(@"\n");
+
     XCTAssertTrue([objectData isEqualToString:expectedData], @"Simple object default values weren't set properly in the resulting JSON");
 }
 
@@ -158,7 +160,7 @@ static NSString * const simpleTestObjectString32Bit = @"{\"pBoolean\":1,\"boolea
     EnumerationContainingTestObject *object = [[EnumerationContainingTestObject alloc] init];
     object.enumValue = MyEnumSecondValue;
     NSString *serializedJSON = [serializer JSONStringWithObject:object];
-    NSString *expectedJson = @"{\"optionValue\":0,\"enumValue\":2}";
+    NSString *expectedJson = @"{\"enumValue\":2,\"optionValue\":0}";
     XCTAssertEqualObjects(expectedJson, serializedJSON, @"Object with an enum property should have been serialized correctly");
 }
 
@@ -167,7 +169,7 @@ static NSString * const simpleTestObjectString32Bit = @"{\"pBoolean\":1,\"boolea
     EnumerationContainingTestObject *object = [[EnumerationContainingTestObject alloc] init];
     object.optionValue = MyOptionAValue | MyOptionSecondValue;
     NSString *serializedJSON = [serializer JSONStringWithObject:object];
-    NSString *expectedJson = @"{\"optionValue\":3,\"enumValue\":0}";
+    NSString *expectedJson = @"{\"enumValue\":0,\"optionValue\":3}";
     XCTAssertEqualObjects(expectedJson, serializedJSON, @"Object with an option property should have been serialized correctly");
 }
 

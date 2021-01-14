@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-void linkMutableArrayCategory();
+void linkMutableArrayCategory(void);
 
 @interface NSMutableArray (JLJSONMapping)
 

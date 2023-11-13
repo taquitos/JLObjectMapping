@@ -75,9 +75,9 @@
     objectsHash ^= self.string ? [self.string hash] : 0;
     NSMutableString *primativeString = [[NSMutableString alloc]init];
 
-    [primativeString appendString:[NSString stringWithFormat:@"%c", self.pBoolean]];
+    [primativeString appendString:[NSString stringWithFormat:@"%b", self.pBoolean]];
     [primativeString appendString:[NSString stringWithFormat:@"%c", self.pChar]];
-    [primativeString appendString:[NSString stringWithFormat:@"%c", self.boolean]];
+    [primativeString appendString:[NSString stringWithFormat:@"%b", self.boolean]];
     [primativeString appendString:[NSString stringWithFormat:@"%f", self.pDouble]];
     [primativeString appendString:[NSString stringWithFormat:@"%f", self.pFloat]];
     [primativeString appendString:[NSString stringWithFormat:@"%i", self.pInt]];

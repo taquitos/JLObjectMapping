@@ -14,7 +14,7 @@ NSString * const kObjectMappingFailureReasonKey = @"JLObjectMappingDetailedFailu
 
 @implementation NSError (JLJSONMapping)
 
-void linkErrorCategory(){}
+void linkErrorCategory(void){}
 
 + (NSError *)errorWithReason:(JLDeserializationError)reason reasonText:(NSString *)reasonText description:(NSString *)description
 {

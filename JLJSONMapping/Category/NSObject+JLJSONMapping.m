@@ -10,7 +10,7 @@
 
 @implementation NSObject (JLJSONMapping)
 
-void linkObjectCategory(){}
+void linkObjectCategory(void){}
 
 + (NSDateFormatter *)jl_dateFormatterForPropertyNamed:(NSString*)propertyName
 {

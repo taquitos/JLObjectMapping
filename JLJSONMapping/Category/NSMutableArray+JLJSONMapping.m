@@ -10,7 +10,7 @@
 
 @implementation NSMutableArray (JLJSONMapping)
 
-void linkMutableArrayCategory(){}
+void linkMutableArrayCategory(void){}
 
 + (NSMutableArray *)jl_newSparseArray:(NSUInteger)size
 {
